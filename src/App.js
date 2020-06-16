@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import $, { unique } from 'jquery';
+import $ from 'jquery';
 
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
-var contentRoutes;
+
 
 class App extends React.Component {
 
@@ -16,24 +16,16 @@ class App extends React.Component {
       dataType:'json',
       cache: false,
       success: function(data){
-       contentRoutes = data;
-       console.log(contentRoutes.routes); // Pokaže array z dvema vnosoma (pravilno)
+        this.loadMap(data)
       },
       error: function(xhr, status, err){
         console.log(err);
         alert(err);
       }
     });
-
   }
 
-
-
-
-  componentDidMount() {
-  
-    this.getRoutes();
-
+  loadMap(data){
     const map = new mapboxgl.Map({
       container: this.mapWrapper,
       style: 'mapbox://styles/mapbox/streets-v10',
@@ -41,41 +33,45 @@ class App extends React.Component {
       zoom: 12
     });
 
- 
-   // console.log(contentRoutes.routes); // vrne UNDEFINED (po mojem mnenju zato, ker ajax še ne naloži .json datoteke)
+    map.on('load', function() {
+    map.addSource(data[0].route, {
+    'type': 'geojson',
+    'data': {
+    'type': 'Feature',
+    'properties': {},
+    'geometry': {
+    'type': 'LineString',
+    'coordinates': data[0].coordinates
+    }
+    }
+    });
+    map.addLayer({
+    'id': data[0].route,
+    'type': 'line',
+    'source': data[0].route,
+    'layout': {
+    'line-join': 'round',
+    'line-cap': 'round'
+    },
+    'paint': {
+    'line-color': '#8ED081',
+    'line-width': 4
+    }
+    });
+    });
+  
+  }
 
 
-   // spodnjo kodo bi rad s .foreach pognal čez zgornji array, da za vsak vnos izvede funkcijo.
-  map.on('load', function() {
-  map.addSource(contentRoutes.routes[0].route, {
-  'type': 'geojson',
-  'data': {
-  'type': 'Feature',
-  'properties': {},
-  'geometry': {
-  'type': 'LineString',
-  'coordinates': contentRoutes.routes[0].coordinates
-  }
-  }
-  });
-  map.addLayer({
-  'id': contentRoutes.routes[0].route,
-  'type': 'line',
-  'source': contentRoutes.routes[0].route,
-  'layout': {
-  'line-join': 'round',
-  'line-cap': 'round'
-  },
-  'paint': {
-  'line-color': '#8ED081',
-  'line-width': 8
-  }
-});
-});
-// konec kode, ki bi jo rad loop-al
 
+  componentDidMount() {
+  
+    this.getRoutes();
 
   }
+
+
+  
   render() {
 
     
