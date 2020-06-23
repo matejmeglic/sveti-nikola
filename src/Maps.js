@@ -409,6 +409,7 @@ function showAllRoutes() {
       });
       menu.appendChild(buttonResetRoutes);
       oneRouteCollection = [];
+      showAllRoutes();
     });
 
   
