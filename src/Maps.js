@@ -5,7 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import $ from 'jquery';
 
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
+mapboxgl.accessToken = 'pk.eyJ1IjoibWF0ZWptZWdsaWMiLCJhIjoiY2tiZXpudm1iMHFvZDJ1cG1ub3pqaHZhMyJ9.lzD5DdQCear_9OR586acJQ';
 var routeCollection = []; // all routes from json
 var hiddenRouteCollection = []; // all hidden routes from json
 var oneRouteCollection = []; // selected route
