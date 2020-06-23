@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#map {  
+  width: 100vw;
+  height: 90vh; 
+}
+
+#marker {
+  background-image: url('./contents/web_images/marker_logo_200.jpg');
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+
+
+.mapboxgl-popup-content {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 135px 15px 15px 15px ;  
+}
+
+.menu {
+  position:absolute;
+  z-index:1;
+  top:10px;
+  right:10px;
+  border-radius:3px;
+  width:120px;
+  }
+.menu button {
+  font:13px/20px 'Helvetica Neue', sans-serif;
+  background:#3887be;
+  color:#fff;
+  display:block;
+  width:100%;
+  margin:0;
+  padding:0;
+  padding:10px;
+  border:none;
+  border-bottom:1px solid rgba(0,0,0,0.25);
+  cursor:pointer;
+  }
+  .menu button:first-child {
+    border-radius:3px 3px 0 0;
+    }
+  .menu button:last-child {
+    border-radius:0 0 3px 3px;
+    border:none;
+    }
+  .menu button.active,
+  .menu button:hover {
+    background-color:#52a1d8;
+    }
