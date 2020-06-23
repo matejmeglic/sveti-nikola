@@ -408,10 +408,41 @@ function showAllRoutes() {
         showAllRoutes()
       });
       menu.appendChild(buttonResetRoutes);
+      // delete route button
+            var buttonDeleteRoutes = document.createElement('button');
+            buttonDeleteRoutes.textContent = "All Routes";
+            buttonDeleteRoutes.addEventListener('click',function() {
+              resetSource("lines","lines-layer");
+            });
+            menu.appendChild(buttonDeleteRoutes);
       oneRouteCollection = [];
       showAllRoutes();
+
+
+
     });
 
+
+    showPopUp();
+
+            // pop up on peak
+            var peakCoordinates = [16.59839656400042,43.144040079941696];
+            var popupPeak = new mapboxgl.Popup({ 
+              offset: 25,
+              closeButton: false,
+              closeOnClick: false })
+              .setText(
+                'Sveti Nikola - 626m'
+              );
+               
+              var el = document.createElement('div');
+              el.id = 'marker';
+               
+              
+              new mapboxgl.Marker(el)
+              .setLngLat(peakCoordinates)
+              .setPopup(popupPeak) 
+              .addTo(map);
   
 
         // // Change the cursor to a pointer when the mouse is over the states layer.
@@ -430,29 +461,12 @@ function showAllRoutes() {
         //   map.getCanvas().style.cursor = '';
         //   });
         	
-          showPopUp();
+          
 
 
 
 
-          // pop up on peak
-          var peakCoordinates = [16.59839656400042,43.144040079941696];
-          var popupPeak = new mapboxgl.Popup({ 
-            offset: 25,
-            closeButton: false,
-            closeOnClick: false })
-            .setText(
-              'Sveti Nikola - 626m'
-            );
-             
-            var el = document.createElement('div');
-            el.id = 'marker';
-             
-            
-            new mapboxgl.Marker(el)
-            .setLngLat(peakCoordinates)
-            .setPopup(popupPeak) 
-            .addTo(map);
+
 
 
             
