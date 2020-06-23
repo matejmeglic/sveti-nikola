@@ -454,7 +454,7 @@ function showAllRoutes() {
             .addTo(map);
 
 
-            showAllRoutes();
+            
 
   } //componentdidmount
 
