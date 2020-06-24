@@ -8,22 +8,48 @@ import $ from 'jquery';
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0ZWptZWdsaWMiLCJhIjoiY2tiZXpudm1iMHFvZDJ1cG1ub3pqaHZhMyJ9.lzD5DdQCear_9OR586acJQ';
 var routeCollection = []; // all routes from json
 var hiddenRouteCollection = []; // all hidden routes from json
+var iconsCollection = []; // all icons from json
+var langCollection = []; // all translations from json
 var oneRouteCollection = []; // selected route
 var limitedRouteCollection = []; // all routes - selected route
 var combinedCoordinates = []; // for building a specific route from json route parts
-var layers = []; // keeping track of what layers are visible
+var currentVisibleMapLayers = []; // keeping track of what layers are visible
 var i = 0; // alternative naming set for map.setLayer
-
-var baseLayers = [ 
+var width = $(window).width(); // get screen width
+var mapboxConfigObject; // object to refer to load mapboxConfig in based on window width
+var mapboxConfig = [ // settings for map based on the device (screen width)
   {
-  label: 'Outdoors',
+    set: 'web',
+    coordinates: [16.601501, 43.148345],
+    zoom: 13,
+    normalLineWidth: 6,
+    limitedLineWidth: 4,
+    selectedLineWidth: 10,
+  },
+  {
+    set: 'mobile',
+    coordinates: [16.593600, 43.162996],
+    zoom: 11,
+    normalLineWidth: 6,
+    limitedLineWidth: 4,
+    selectedLineWidth: 8,
+  }
+]
+var baseLayers = [  // mapbox config for changing backgrounds
+  {
+  label: 'buttonOutdoors',
   id: 'outdoors-v11'
 },
 {
-  label: 'Satellite',
-  id: 'satellite-v9' // 'streets-v11'
+  label: 'buttonSatellite',
+  id: 'satellite-v9' // alternatively use 'streets-v11'
 }
 ];
+
+// TO-DO PROBLEMS
+var lang = "en"; //hardcoded value, change when in gatsby
+var translation; // find another way to return a translation from a function getTranslation()
+
 
 class Maps extends React.Component {
 
@@ -57,7 +83,6 @@ class Maps extends React.Component {
                 'route': item.route,
                 'alternative': item.alternative,
                 'hiddenRoute': item.hiddenRoute
-                
                 },
                 'geometry': {
                 'type': 'LineString',
@@ -65,11 +90,8 @@ class Maps extends React.Component {
                 }
                 }
              );
-            
-
         });  
-
-        
+   
         // set up array for hidden routes
         data.hidden_routes.forEach(function(item) {
           combinedCoordinates = []; // empty array for each route
@@ -89,19 +111,23 @@ class Maps extends React.Component {
              'color': item.color,
              'originalColor': item.color,
              'route': item.route,
-             'alternative': item.alternative
-             
+             'alternative': item.alternative 
              },
              'geometry': {
              'type': 'LineString',
              'coordinates': combinedCoordinates
              }
              }
-          );
-         
-
+          );       
      }); 
-      },
+     
+     // set array of icons [peak icon hardcoded]
+     iconsCollection = data.icons;
+
+     // set array of translations
+     langCollection = data.languages;
+
+    },
       error: function(xhr, status, err){
         console.log(err);
         alert(err);
@@ -114,9 +140,21 @@ class Maps extends React.Component {
 
   componentDidMount() {
 
+function getTranslation(object) {
+  langCollection.forEach(function(item){
+    // console.log(object);
+    // console.log(item);
+    if (object === item.item) {
+      
+      translation = item.translation[lang];
+    }
+  });
+}
+
+
 // functions declaration
 
-  // function define a single route
+  // define a single route
   function defineRoute(sourceName, layerName, features) {
     map.addSource(sourceName, {
       'type': 'geojson',
@@ -130,98 +168,33 @@ class Maps extends React.Component {
       'type': 'line',
       'source': sourceName,
       'paint': {
-      'line-width': 6,
+      'line-width': mapboxConfigObject.normalLineWidth,
       'line-color': ['get', 'color'],
       'line-opacity': 1
       }
     });
-    layers.push(layerName);
-    
+    currentVisibleMapLayers.push(layerName); 
   }
 
+  // splice items from an array
   function removeFromArray(arrayName,comparisonValue) {
-    for( var i = 0; i < arrayName.length; i++){ 
-           
+    for( var i = 0; i < arrayName.length; i++){        
       if ( arrayName[i] === comparisonValue) { 
         arrayName.splice(i, 1);
-        i--; 
-        
-      }};
-      
+        i--;    
+      }};   
   }
 
-  // function reset source and layer
-  
-  function resetSource(sourceName, layerName) {
-    
+  // reset source and layer for route collection/single route
+  function resetSource(sourceName, layerName) {  
     if (map.getLayer(layerName)) {
       map.removeLayer(layerName);
-
-      removeFromArray(layers,layerName);
+      removeFromArray(currentVisibleMapLayers,layerName);
     }
     if (map.getSource(sourceName)) {
        map.removeSource(sourceName);
     }
   }
-
-  // reset colors (after alternative route color manipulation)
-  function resetColor() {
-    routeCollection.forEach(function (route){
-      route.properties.color =  route.properties.originalColor;
-    });
-  }
-
-// Show all routes
-function showAllRoutes() {
-  
-
-  resetColor();
-  resetSource("lines","lines-layer");
-  defineRoute('lines','lines-layer',routeCollection);
-  clickOnRoute();
-};
-
-  // Show single (selected) route
-  function showSelectedRoute(e) {
-    // remember selected route
-    resetColor();
-    oneRouteCollection = [];
-    limitedRouteCollection = [];
-        routeCollection.forEach(function(item) { 
-        
-        if (e.features[0].properties.route === item.properties.route) {
-          oneRouteCollection.push(item);          
-        } else {
-          limitedRouteCollection.push(item);
-        }   
-      });
-      
-
-      if (typeof oneRouteCollection[0].properties.alternative !== 'undefined') {
-        oneRouteCollection[0].properties.alternative.forEach(function(alternativeRoute) {
-          
-          removeFromArray(limitedRouteCollection,alternativeRoute);
-          
-
-        });
-      }
-      
-      resetSource("lines","lines-layer");
-      defineRoute('lines','lines-layer',limitedRouteCollection);
-      mapSetPaintProperty()
-      // reset previous Alternative routes (so that currently selected route is on top)
-    clearAlternatives();
-    setAlternatives(oneRouteCollection);
-    clearHiddenRoutes();
-    setHiddenRoutes(oneRouteCollection);
-    // show selected route  
-    resetSource("lines-one","lines-layer-one");
-    defineRoute('lines-one','lines-layer-one',oneRouteCollection);
-    map.setPaintProperty('lines-layer-one','line-width', 10);
-    map.setPaintProperty('lines-layer','line-width', 4);
-    clickOnRoute();
-    
-  };
 
   function mapSetPaintProperty() {
     // change opacity of all other routes
@@ -238,155 +211,190 @@ function showAllRoutes() {
      map.setPaintProperty('lines-layer', 'line-color', nonSelectedRouteColor);
   }
 
-  //
-  function clearHiddenRoutes() {
-
-
-    layers.forEach(function(layer){
-      if (layer.includes("hiddenRoute")) {
-        resetSource(layer, layer)
-        removeFromArray(layers,layer);
-      }
-    }); 
-
-    
-  }
-  
-  //
-  function setHiddenRoutes(oneRouteCollection) {
-    if (typeof oneRouteCollection[0].properties.hiddenRoute !== 'undefined') {
-      
-      
-      oneRouteCollection[0].properties.hiddenRoute.forEach(function(hiddenRoute) {
-       
-      hiddenRouteCollection.forEach(function(route){
-        if (route.properties.route === hiddenRoute) {
-          route.properties.color = oneRouteCollection[0].properties.color;
-          var oneHiddenRoute = [];
-          oneHiddenRoute.push(route);
-          i++;
-          
-          
-          var iStr = "hiddenRoute"+i.toString();
-          
-
-          defineRoute(iStr, iStr, oneHiddenRoute);
-          map.setPaintProperty(iStr, 'line-opacity', 0.75);
-          // map.on('click', iStr, function(e) {
-          //   showSelectedRoute(e);
-          // });
-          
-        }
-      });
-      
+  // reset colors (after alternative route color manipulation)
+  function resetColor() {
+    routeCollection.forEach(function (route){
+      route.properties.color =  route.properties.originalColor;
     });
   }
+
+  // on click on one of the routes
+  function clickOnRoute() {
+    currentVisibleMapLayers.forEach(function(layer){
+      map.on('click', layer, function(e) {
+        ShowSelectedRoute(e);
+      });
+    });
   }
 
-  //
-  function clearAlternatives() {
+  // pop-up on route hover + pointer handling
+  function showPopUp(array) {
+    array.forEach(function (item){
+      var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+        }); 
+      map.on('mouseenter', item, function(e) {
+      map.getCanvas().style.cursor = 'pointer';
+      var coordinates = e.features[0].geometry.coordinates.slice();         
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+      popup
+      .setLngLat(e.lngLat)
+      .setHTML(e.features[0].properties.route)
+      .addTo(map);
+      });
+      map.on('mouseleave', item, function() {
+      map.getCanvas().style.cursor = '';
+      popup.remove();
+      });
+    });
+  }
 
+  // populate pop-up marker on peak [hardcoded]
+  function PeakPopUp() {
+    var peakCoordinates = [16.59839656400042,43.144040079941696];
+    var popupPeak = new mapboxgl.Popup({ 
+      offset: 25,
+      closeButton: false,
+      closeOnClick: false })
+      .setText(
+        'Sveti Nikola - 626m'
+      );  
+      var el = document.createElement('div');
+      el.id = 'marker';   
+      new mapboxgl.Marker(el)
+      .setLngLat(peakCoordinates)
+      .setPopup(popupPeak) 
+      .addTo(map);     
+    }
+   
+  // populate pop-up warning (icons) markers based on json  
+  function SetIcons(){
+    iconsCollection.forEach(function(icon){
+      var popupIcon = new mapboxgl.Popup({ 
+        offset: 25,
+        closeButton: false,
+        closeOnClick: false })
+        .setHTML(
+          icon.translation[lang]
+        );  
+        var el = document.createElement('div');
+        el.className = 'elementIcon';   
+        new mapboxgl.Marker(el)
+        .setLngLat(icon.coordinates)
+        .setPopup(popupIcon) 
+        .addTo(map);   
+    });
+  }
 
-      layers.forEach(function(layer){
-        if (layer.includes("alternativeRoute")) {
-          resetSource(layer, layer)
-          removeFromArray(layers,layer);
+  // Show all routes
+  function ShowAllRoutes() {
+    resetColor();
+    resetSource("lines","lines-layer");
+    defineRoute('lines','lines-layer',routeCollection);
+    clickOnRoute();
+    showPopUp(currentVisibleMapLayers);
+  };
+
+  // Show single (selected) route
+  function ShowSelectedRoute(e) {
+    resetColor();
+    oneRouteCollection = [];
+    limitedRouteCollection = [];
+    //split selected route from other route from collection
+    routeCollection.forEach(function(item) { 
+      if (e.features[0].properties.route === item.properties.route) {
+        oneRouteCollection.push(item);          
+      } else {
+        limitedRouteCollection.push(item);
+      }   
+    });
+    // remove alternative routes from collection (different styling)
+    if (typeof oneRouteCollection[0].properties.alternative !== 'undefined') {
+      oneRouteCollection[0].properties.alternative.forEach(function(alternativeRoute) {
+        removeFromArray(limitedRouteCollection,alternativeRoute);
+      });
+    }
+    // plot routes without selected route  
+    resetSource("lines","lines-layer");
+    defineRoute('lines','lines-layer',limitedRouteCollection);
+    map.setPaintProperty('lines-layer','line-width', mapboxConfigObject.limitedLineWidth);
+    mapSetPaintProperty()
+    // reset previous alternative and hidden routes (so that currently selected route is on top)
+    // clearAlternatives();
+    // setAlternatives(oneRouteCollection);
+    // clearHiddenRoutes();
+    // setHiddenRoutes(oneRouteCollection);
+    clearAlternatives(currentVisibleMapLayers,"alternativeRoute");
+    setAlternatives(oneRouteCollection, routeCollection,"alternative","alternativeRoute",0.45);
+    clearAlternatives(currentVisibleMapLayers,"hiddenRoute");
+    setAlternatives(oneRouteCollection, hiddenRouteCollection,"hiddenRoute","hiddenRoute",0.75);
+    // show selected route  
+    resetSource("lines-one","lines-layer-one");
+    defineRoute('lines-one','lines-layer-one',oneRouteCollection);
+    map.setPaintProperty('lines-layer-one','line-width', mapboxConfigObject.selectedLineWidth);
+    clickOnRoute();
+    showPopUp(currentVisibleMapLayers);
+    SetIcons();
+  };
+
+  // clear alternative/hidden routes from map
+  function clearAlternatives(array,stringName) {
+      array.forEach(function(item){
+        if (item.includes(stringName)) {
+          resetSource(item, item)
+          removeFromArray(array,item);
         }
-      }); 
-
-      
+      });       
     }
     
-    //
-    function setAlternatives(oneRouteCollection) {
-      if (typeof oneRouteCollection[0].properties.alternative !== 'undefined') {
-        
-        
-        oneRouteCollection[0].properties.alternative.forEach(function(alternativeRoute) {
-         
-        routeCollection.forEach(function(route){
+    // populate alternative/hidden routes on map
+    function setAlternatives(oneRouteCollection,collection,prop,stringName, opacity) {
+      if (typeof oneRouteCollection[0].properties[prop] !== 'undefined') {
+        oneRouteCollection[0].properties[prop].forEach(function(alternativeRoute) {
+        collection.forEach(function(route){
           if (route.properties.route === alternativeRoute) {
             route.properties.color = oneRouteCollection[0].properties.color;
             var oneAlternativeRoute = [];
             oneAlternativeRoute.push(route);
             i++;
-            
-            
-            var iStr = "alternativeRoute"+i.toString();
-            
-
+            var iStr = stringName+i.toString();
             defineRoute(iStr, iStr, oneAlternativeRoute);
-            map.setPaintProperty(iStr, 'line-opacity', 0.45);
+            map.setPaintProperty(iStr, 'line-opacity', opacity);
             map.on('click', iStr, function(e) {
-              showSelectedRoute(e);
-            });
-            
-          }
-        });
-        
-      });
-    }
-    }
-
-      // on click on one of the routes
-      function clickOnRoute() {
-        layers.forEach(function(layer){
-          map.on('click', layer, function(e) {
-            showSelectedRoute(e);
-          });
-    
+              ShowSelectedRoute(e);
+              }); 
+            }
+          });  
         });
       }
- 
-
-    // pop-up on route hover + pointer handling
-    function showPopUp() {
-      var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
-        }); 
-
-        map.on('mouseenter', 'lines-layer', function(e) {
-        map.getCanvas().style.cursor = 'pointer';
-        
-        var coordinates = e.features[0].geometry.coordinates.slice();
-                  
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
-        
-        popup
-        .setLngLat(e.lngLat)
-        .setHTML(e.features[0].properties.route)
-        .addTo(map);
-        });
-        
-        map.on('mouseleave', 'lines-layer', function() {
-        map.getCanvas().style.cursor = '';
-        popup.remove();
-        });
-
     }
 
     // actions
     // read json
     this.getRoutes();
 
-    // plot map
+    // set config options
+    if (width > 700) {
+      mapboxConfigObject = mapboxConfig[0]
+    } else {
+      mapboxConfigObject = mapboxConfig[1]
+    }
+
+    // plot map 16.587599,43.156592
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/outdoors-v11',
-      center: [16.587599,43.156592],
-      zoom: 13
+      center: mapboxConfigObject.coordinates,
+      zoom: mapboxConfigObject.zoom
     });
-
-    
-    
 
     // load selected map
     map.on('style.load', function () {
       // Triggered when `setStyle` is called.
-      if (routeCollection) showAllRoutes();
+      if (routeCollection) ShowAllRoutes();
     });
     
    // build map navigation
@@ -395,7 +403,8 @@ function showAllRoutes() {
       var menu = document.getElementById('menu');
       baseLayers.forEach(function(l) {
         var button = document.createElement('button'); 
-        button.textContent = l.label;
+        getTranslation(l.label);
+        button.textContent = translation;
         button.addEventListener('click', function() {
           map.setStyle('mapbox://styles/mapbox/' + l.id);
         });
@@ -403,64 +412,51 @@ function showAllRoutes() {
       });
       // reset route button
       var buttonResetRoutes = document.createElement('button');
-      buttonResetRoutes.textContent = "All Routes";
+      getTranslation("buttonAllRoutes");
+      buttonResetRoutes.textContent = translation;
       buttonResetRoutes.addEventListener('click',function() {
-        showAllRoutes()
+        ShowAllRoutes()
+        map.setPaintProperty('lines-layer','line-width', 6);
       });
       menu.appendChild(buttonResetRoutes);
-      // delete route button
-            var buttonDeleteRoutes = document.createElement('button');
-            buttonDeleteRoutes.textContent = "All Routes";
-            buttonDeleteRoutes.addEventListener('click',function() {
-              resetSource("lines","lines-layer");
-            });
-            menu.appendChild(buttonDeleteRoutes);
+      // delete route button on desktop only
+      if (mapboxConfigObject.set === "web") {
+        var buttonDeleteRoutes = document.createElement('button');
+        getTranslation("buttonDeleteRoute");
+        buttonDeleteRoutes.textContent = translation;
+        buttonDeleteRoutes.addEventListener('click',function() {
+          resetSource("lines","lines-layer");
+          resetSource("lines-one","lines-layer-one");
+          currentVisibleMapLayers.forEach(function(el){ //twice due to glith with forEach - gotta investigate
+            resetSource(el,el);
+          });
+          currentVisibleMapLayers.forEach(function(el){
+            resetSource(el,el);
+          });
+        });
+        menu.appendChild(buttonDeleteRoutes);
+      }
+
+      // enable geolocation tracking
+      map.addControl(
+        new mapboxgl.GeolocateControl({
+        positionOptions: {
+        enableHighAccuracy: true
+        },
+        trackUserLocation: true
+        })
+        );
+
+      // on load config and populate screen with routes
       oneRouteCollection = [];
-      showAllRoutes();
-
-
-
+      ShowAllRoutes();
+      PeakPopUp();
+      SetIcons();
     });
 
 
-    showPopUp();
 
-            // pop up on peak
-            var peakCoordinates = [16.59839656400042,43.144040079941696];
-            var popupPeak = new mapboxgl.Popup({ 
-              offset: 25,
-              closeButton: false,
-              closeOnClick: false })
-              .setText(
-                'Sveti Nikola - 626m'
-              );
-               
-              var el = document.createElement('div');
-              el.id = 'marker';
-               
-              
-              new mapboxgl.Marker(el)
-              .setLngLat(peakCoordinates)
-              .setPopup(popupPeak) 
-              .addTo(map);
-  
-
-        // // Change the cursor to a pointer when the mouse is over the states layer.
-        // map.on('mouseenter', 'lines-layer', function() {
-        //   map.getCanvas().style.cursor = 'pointer';
-        //   });
-        // map.on('mouseenter', 'lines-layer-one', function() {
-        //   map.getCanvas().style.cursor = 'pointer';
-        //   });
-          
-        // // Change it back to a pointer when it leaves.
-        // map.on('mouseleave', 'lines-layer', function() {
-        //   map.getCanvas().style.cursor = '';
-        //   });
-        // map.on('mouseleave', 'lines-layer-one', function() {
-        //   map.getCanvas().style.cursor = '';
-        //   });
-        	
+     	
           
 
 
