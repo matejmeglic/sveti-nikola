@@ -15,7 +15,6 @@ var limitedRouteCollection = []; // all routes - selected route
 var combinedCoordinates = []; // for building a specific route from json route parts
 var currentVisibleMapLayers = []; // keeping track of what layers are visible
 var i = 0; // alternative naming set for map.setLayer
-var width = $(window).width(); // get screen width
 var peakShown = 0; // is peak shown
 var mapboxConfigObject; // object to refer to load mapboxConfig in based on window width
 var mapboxConfig = [ // settings for map based on the device (screen width)
@@ -143,6 +142,8 @@ class Maps extends React.Component {
 
 
   componentDidMount() {
+
+    var width = $(window).width(); // get screen width - need to be declared here due to SS rendering
 
 // functions declaration
 
