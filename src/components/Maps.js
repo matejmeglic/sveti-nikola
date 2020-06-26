@@ -50,8 +50,9 @@ var baseLayers = [  // mapbox config for changing backgrounds
 
 // TO-DO PROBLEMS
 var lang = "slo"; //hardcoded value, change when in gatsby
-var translation; // find another way to return a translation from a function getTranslation()
-
+var translation; // find another way to return a translation from a function getTranslation() - return doesn't work
+// absolute path for panorama picture 
+// double cleaning of forEach arrays (RemoveIcons() and currentVisibleLayer)
 
 
 class Maps extends React.Component {
@@ -267,7 +268,7 @@ class Maps extends React.Component {
       var imgDiv = document.getElementById('peak');  
       if (peakShown === 0) {
           var showPeakImg = document.createElement('img');
-          showPeakImg.src = '../misc/web_images/panorama.jpg'; 
+          showPeakImg.src = 'https://raw.githubusercontent.com/matejmeglic/sveti-nikola/master/src/contents/misc/web_images/panorama.jpg'; // change to dynamic path that will work with main pages and with posts as well 
           showPeakImg.alt = "Sveti Nikola - 626m";
           showPeakImg.title = "Sveti Nikola - 626m";
           imgDiv.innerHTML = "";
