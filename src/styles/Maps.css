@@ -1,0 +1,149 @@
+
+.wrapper {
+  margin: auto;
+  width:80vw;
+}
+
+#map {  
+  width: 99vw;
+  height: 70vh; 
+}
+
+#marker {
+  background-image: url('../contents/misc/web_images/marker_logo_200.jpg');
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  }
+
+.elementIcon {
+  background-image: url('../contents/misc/web_images/warning_icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-size: 10px;
+  }
+
+.popUpText {
+  text-align: left;
+}
+
+.mapboxgl-popup-content {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  max-width: 400px;
+  padding: 10px 10px 10px 10px ;  
+}
+
+.navigation{
+  height: 5vh;
+  font: 'Helvetica Neue', sans-serif;
+  margin-bottom: 10px;
+}
+
+.navigation h1 {
+  margin-left:40px;
+  margin-top: 20px;
+
+  display: inline-block;
+  font-style: normal;
+  font-size: 25px;
+  font: 'Helvetica Neue', sans-serif;
+  
+}
+
+.link {
+  float: right; 
+  margin-top: 20px;
+  margin-left:10px;
+  text-decoration: none;
+  font: 16px/20px 'Helvetica Neue', sans-serif;
+}
+
+.last {
+  float: right; 
+  margin-top: 20px;
+  margin-left:10px;
+  margin-right:20px;
+  text-decoration: none;
+  font: 16px/20px 'Helvetica Neue', sans-serif;
+}
+
+#peak {
+  position: absolute;
+  top: 16vh;
+  left:10%;
+  right:10%;
+  width: 80%;
+}
+
+#hello-world {
+  margin: auto;
+  width:80vw;
+  margin-top:30px;
+  margin-bottom:20px;
+  font: 16px/20px 'Helvetica Neue', sans-serif;
+}
+
+.post {
+  margin: auto;
+  max-width:750px;
+  text-align: justify;
+}
+
+.menu {
+  position:absolute;
+  top: 7vh;
+  left: 0.5vw;
+}
+
+.menu button {
+  font:13px/20px 'Helvetica Neue', sans-serif;
+  background:#3887be;
+  color:#fff;
+  width:120px;
+  margin-right:1px;
+  padding:10px;
+  border:none;
+  border-bottom:1px solid rgba(0,0,0,0.25);
+  border-radius:5px;
+  cursor:pointer;
+  }
+
+  .menu button.active,
+  .menu button:hover {
+    background-color:#52a1d8;
+    }
+
+    @media only screen and (max-width: 700px) {
+      #map {  
+        width: 100vw;
+        height: 60vh; 
+      }
+      
+      #marker {
+        width: 30px;
+        height: 30px;
+      }
+
+      .elementIcon {
+        width: 15px;
+        height: 15px;
+        }
+
+        .menu {
+          left: 2vw;
+        }
+
+      .menu button {
+        width: 80px;
+        padding: 6px;
+        font:13px/20px 'Helvetica Neue', sans-serif;
+      }
+    }
