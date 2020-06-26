@@ -53,6 +53,8 @@ var lang = "slo"; //hardcoded value, change when in gatsby
 var translation; // find another way to return a translation from a function getTranslation() - return doesn't work
 // absolute path for panorama picture 
 // double cleaning of forEach arrays (RemoveIcons() and currentVisibleLayer)
+// show selected path on default for post page
+// generate image gallery pages using gatsby
 
 
 class Maps extends React.Component {
