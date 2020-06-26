@@ -267,7 +267,7 @@ class Maps extends React.Component {
       var imgDiv = document.getElementById('peak');  
       if (peakShown === 0) {
           var showPeakImg = document.createElement('img');
-          showPeakImg.src = 'panorama.jpg'; 
+          showPeakImg.src = '../misc/web_images/panorama.jpg'; 
           showPeakImg.alt = "Sveti Nikola - 626m";
           showPeakImg.title = "Sveti Nikola - 626m";
           imgDiv.innerHTML = "";
