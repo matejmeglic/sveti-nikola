@@ -1,7 +1,7 @@
 
 .wrapper {
   margin: auto;
-  width:80vw;
+  width:70vw;
 }
 
 #map {  
@@ -49,7 +49,7 @@
 
 .navigation h1 {
   margin-left:40px;
-  margin-top: 20px;
+  margin-top: 2vh;
 
   display: inline-block;
   font-style: normal;
@@ -93,7 +93,7 @@
 
 .post {
   margin: auto;
-  max-width:750px;
+  max-width: 70vw;
   text-align: justify;
 }
 

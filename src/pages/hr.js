@@ -25,28 +25,28 @@ export default function Home({data}) {
 }
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {lang: {eq: "hr"}}}) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            lang
-            title
-            date
-            length
-            time
-            warning
-            marked
-          }
-          excerpt(pruneLength: 500)
-          fields {
-            slug
-          }
+query {
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {lang: {eq: "hr"}}}) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          lang
+          title
+          date
+          length
+          time
+          warning
+          marked
+        }
+        excerpt(pruneLength: 500)
+        fields {
+          slug
         }
       }
     }
   }
-  
+}
+
 `

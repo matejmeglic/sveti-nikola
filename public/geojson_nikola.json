@@ -2,6 +2,7 @@
     "routes":[
         {
             "route": "Ivan Dolac Jagodna",
+            "page": "Ivan-Dolac-Jagodna",
             "color": "#a2ff00",
             "parts": ["ivandolac-crossroads","ivandolac-crossroads-mid","ivandolac-mid-jagodnadolacExit","jagodna-dolacExit-village","jagodna-village-road","jagodna-road-jagodna-crossroads","nedelja-crossroads-jagodna-crossroads-dolac","nedelja-crossroads-dolac-plateaujagodna-crossroads","svirce-east-plateaujagodna-crossroads-top"],
             "alternative": ["Jagodna","Ivan Dolac Jagodna"],
@@ -9,6 +10,7 @@
         },
         {
             "route": "Ivan Dolac",
+            "page": "Ivan-Dolac",
             "color": "#783800",
             "parts": ["ivandolac-crossroads","ivandolac-crossroads-mid","ivandolac-mid-plateautop","ivandolac-plateautop-plateaujagodnacrossroadstop","nedelja-crossroads-dolac-plateaujagodna-crossroads","svirce-east-plateaujagodna-crossroads-top"],
             "alternative": ["Jagodna"],
@@ -17,27 +19,32 @@
         },
         {
             "route": "Selca Bycicle",
+            "page": "Selca-Bycicle",
             "color": "#2A9D8F",
             "parts": ["selo-bycicle-part","mid-selo-cycle-tunel-crossroads","selo-dol","dol-kolumbic","kolumbic-nedeljaExit", "nedeljaExit-top"]
         },
         {
             "route": "Selca",
+            "page": "Selca",
             "color": "#F4A261",
             "parts": ["selo-part","mid-selo-cycle-tunel-crossroads","selo-dol","dol-kolumbic","kolumbic-nedeljaExit", "nedeljaExit-top"]    
         },
         {
             "route": "Dol",
+            "page": "Dol",
             "color": "#19abfa",
             "parts": ["dol-part","dol-kolumbic","kolumbic-nedeljaExit", "nedeljaExit-top"]        
         },
         {
             "route": "Sveta Nedelja East",
+            "page": "Sveta-Nedelja-East",
             "color": "#d863ff",
             "parts": ["nedelja-village","nedelja-village-crossroads-jagodna","nedelja-crossroads-jagodna-crossroads-dolac","nedelja-crossroads-dolac-plateaujagodna-crossroads","svirce-east-plateaujagodna-crossroads-top"],
             "alternative": ["Sveta Nedelja"]  
         },    
         {
             "route": "Jagodna",
+            "page": "Jagodna",
             "color": "#457B9D",
             "parts": ["jagodna-dolacExit","jagodna-dolacExit-village","jagodna-village-road","jagodna-road-jagodna-crossroads","nedelja-crossroads-jagodna-crossroads-dolac","nedelja-crossroads-dolac-plateaujagodna-crossroads","svirce-east-plateaujagodna-crossroads-top"],
             "alternative": ["Sveta Nedelja","Sveta Nedelja East"],
@@ -45,23 +52,27 @@
         },
         {
             "route": "Svirče East",
+            "page": "Svirče-East",
             "color":  "#477d00",
             "parts": ["svirce-plateau","svirce-plateau-east-plateaujagodna-crossroads","svirce-east-plateaujagodna-crossroads-top"],
             "alternative": ["Svirče"]        
         },       
         {
             "route": "Svirče",
+            "page": "Svirče",
             "color": "#0dc400",
             "parts": ["svirce-plateau","svirce-plateau-kolumbic","kolumbic-top","kolumbic-nedeljaExit", "nedeljaExit-top"],
             "alternative": ["Svirče East"]           
         },
         {
             "route": "Tunel",
+            "page": "Tunel",
             "color": "#2b23ba",
             "parts": ["tunel-mid-crossroads","selo-dol","dol-kolumbic","kolumbic-nedeljaExit", "nedeljaExit-top"]        
         },
         {
             "route": "Sveta Nedelja Ferata",
+            "page": "Sveta-Nedelja-Ferata",
             "color": "#f2ff00",
             "parts": ["nedelja-village","nedelja-village-ferata1","nedelja-ferata1-ferata2","via-ferata2-fcrossroads","fcrossroads-ferata-upper","nedelja-ferata-upper-nedeljaExit","nedeljaExit-top"],
             "alternative": ["Sveta Nedelja","Sveta Nedelja East"]
@@ -69,12 +80,14 @@
         },
         {
             "route": "Sveta Nedelja Ferata",
+            "page": "Sveta-Nedelja-Ferata",
             "color": "#f2ff00",
             "parts": ["nedelja-village","nedelja-village-ferata1","via-ferata1-fcrossroads","fcrossroads-ferata-upper","nedelja-ferata-upper-nedeljaExit","nedeljaExit-top"],
             "alternative": ["Sveta Nedelja","Sveta Nedelja East"]        
         },
         {
             "route": "Sveta Nedelja",
+            "page": "Sveta-Nedelja",
             "color": "#D62828",
             "parts": ["nedelja-village","nedelja-village-ferata1","nedelja-ferata1-ferata2","nedelja-ferata2-crossroads-tree","nedelja-crossroads-ferata-upper","nedelja-ferata-upper-nedeljaExit","nedeljaExit-top"],
             "alternative": ["Sveta Nedelja East"]          
@@ -309,7 +322,7 @@
             "translation":
             {
             "slo":"Vse poti",
-            "hr":"",
+            "hr":"AAA",
             "en":"All routes"          
             }
         },
@@ -338,15 +351,6 @@
             "slo":"Skrij poti",
             "hr":"",
             "en":"Hide"          
-            }
-        },
-        {
-            "item":"intro",
-            "translation":
-            {
-            "slo":"Pozdravljeni. Ta aplikacija je namenjena pridobivanju informacij o različnih pristopih na najvišji vrh otoka Hvar - hrib Sveti Nikola.",
-            "hr":"",
-            "en":"Hello adventurer. In this app you will find information about different possible ascents to the Top of Hvar - Saint Nikola peak."          
             }
         }
     ]

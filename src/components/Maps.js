@@ -5,6 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import $ from 'jquery';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0ZWptZWdsaWMiLCJhIjoiY2tiZXpudm1iMHFvZDJ1cG1ub3pqaHZhMyJ9.lzD5DdQCear_9OR586acJQ';
+var lang; // = "slo"; //hardcoded value, change when in gatsby - HARDCODED CHANGE IF NEEDED
 var routeCollection = []; // all routes from json
 var hiddenRouteCollection = []; // all hidden routes from json
 var iconsCollection = []; // all icons from json
@@ -16,6 +17,8 @@ var combinedCoordinates = []; // for building a specific route from json route p
 var currentVisibleMapLayers = []; // keeping track of what layers are visible
 var i = 0; // alternative naming set for map.setLayer
 var peakShown = 0; // is peak shown
+var charPosition; // for post pages and correct maps behaviour
+var routeName; // for post pages route selection
 var mapboxConfigObject; // object to refer to load mapboxConfig in based on window width
 var mapboxConfig = [ // settings for map based on the device (screen width)
 
@@ -49,7 +52,7 @@ var baseLayers = [  // mapbox config for changing backgrounds
 ];
 
 // TO-DO PROBLEMS
-var lang = "slo"; //hardcoded value, change when in gatsby
+
 var translation; // find another way to return a translation from a function getTranslation() - return doesn't work
 // absolute path for panorama picture 
 // double cleaning of forEach arrays (RemoveIcons() and currentVisibleLayer)
@@ -87,6 +90,7 @@ class Maps extends React.Component {
                 'color': item.color,
                 'originalColor': item.color,
                 'route': item.route,
+                'page': item.page,
                 'alternative': item.alternative,
                 'hiddenRoute': item.hiddenRoute
                 },
@@ -147,8 +151,28 @@ class Maps extends React.Component {
   componentDidMount() {
 
     var width = $(window).width(); // get screen width - need to be declared here due to SS rendering
+    var sitePath = window.location.pathname; // get path
 
 // functions declaration
+
+  // define site language for map functionality (a bit hackish)
+  function DefineSiteLanguage() {
+    if (sitePath.length === 1){ // special handling for homepage, onChange modify layout.js as well
+      lang = "slo";
+    } 
+    if (sitePath.substr(1, 3) === "slo") { // repeat for posts pages
+      lang = "slo"
+      charPosition = 5;
+    }
+    if (sitePath.substr(1, 2) === "en") { 
+      lang = "en";
+      charPosition = 4;
+    } 
+    if (sitePath.substr(1, 2) === "hr") {
+      lang = "hr"
+      charPosition = 4;
+    }
+  }
 
   // define a single route
   function defineRoute(sourceName, layerName, features) {
@@ -320,27 +344,63 @@ class Maps extends React.Component {
   }
 
   // Show all routes
-  function ShowAllRoutes() {
+  function ShowAllRoutes(trigger) {
     resetColor();
     resetSource("lines","lines-layer");
     defineRoute('lines','lines-layer',routeCollection);
-    clickOnRoute();
+    var pathLength = sitePath.length;
+    if (trigger !== undefined) {
+      pathLength = trigger;
+    }
+    if ( pathLength > 5) { 
+      ShowSelectedRoute(); // posts page show only one route
+    } else {
+      clickOnRoute(); // general pages show all routes
+    }
     showPopUp(currentVisibleMapLayers);
   };
+
+  // extract post name from url
+  function SliceURL() {
+    
+    if (charPosition === 4) {
+      routeName = sitePath.slice(4);
+      routeName = routeName.substring(0, routeName.length - 1);
+    } else if (charPosition === 5) {
+      routeName = sitePath.slice(5);
+      routeName = routeName.substring(0, routeName.length - 1);
+    }
+  }
+
+  // separate selected route from other routes from routeCollection
+  function ExtractSelectedRoute(e) {
+    oneRouteCollection = [];
+    limitedRouteCollection = [];
+    //split selected route from other route from collection
+    if (e === undefined) { // for post pages
+      SliceURL();
+      routeCollection.forEach(function(item) { 
+        if (routeName === item.properties.page) {
+          oneRouteCollection.push(item);          
+        } else {
+          limitedRouteCollection.push(item);
+        }   
+      }); 
+    } else { // on click route
+      routeCollection.forEach(function(item) { 
+        if (e.features[0].properties.route === item.properties.route) {
+          oneRouteCollection.push(item);          
+        } else {
+          limitedRouteCollection.push(item);
+        }   
+      }); 
+    }
+  }
 
   // Show single (selected) route
   function ShowSelectedRoute(e) {
     resetColor();
-    oneRouteCollection = [];
-    limitedRouteCollection = [];
-    //split selected route from other route from collection
-    routeCollection.forEach(function(item) { 
-      if (e.features[0].properties.route === item.properties.route) {
-        oneRouteCollection.push(item);          
-      } else {
-        limitedRouteCollection.push(item);
-      }   
-    });
+    ExtractSelectedRoute(e);
     // remove alternative routes from collection (different styling)
     if (typeof oneRouteCollection[0].properties.alternative !== 'undefined') {
       oneRouteCollection[0].properties.alternative.forEach(function(alternativeRoute) {
@@ -363,6 +423,7 @@ class Maps extends React.Component {
     map.setPaintProperty('lines-layer-one','line-width', mapboxConfigObject.selectedLineWidth);
     clickOnRoute();
     showPopUp(currentVisibleMapLayers);
+    // update index.js
   };
 
   // clear alternative/hidden routes from map
@@ -416,6 +477,9 @@ class Maps extends React.Component {
       zoom: mapboxConfigObject.zoom
     });
 
+    // get page language for map functionality
+    DefineSiteLanguage();
+
     // load selected map
     map.on('style.load', function () {
       // Triggered when `setStyle` is called.
@@ -446,7 +510,7 @@ class Maps extends React.Component {
       buttonResetRoutes.textContent = translation;
       buttonResetRoutes.addEventListener('click',function() {
         SetIcons()
-        ShowAllRoutes()
+        ShowAllRoutes(1) // 1 triggers special behavior to show all routes on post page
         map.setPaintProperty('lines-layer','line-width', 6);
       });
       menu.appendChild(buttonResetRoutes);
@@ -471,15 +535,6 @@ class Maps extends React.Component {
         RemoveIcons()
       });
       menu.appendChild(buttonDeleteRoutes);
-
-      // place intro text from json
-      var pathname = window.location.pathname; 
-      var introDiv = document.getElementById("hello-world");
-      var intro = document.createElement('p'); 
-      getTranslation("intro");
-      var text = document.createTextNode(translation);
-      intro.appendChild(text);
-      introDiv.appendChild(intro);
   
       // enable geolocation tracking
       map.addControl(
@@ -491,17 +546,17 @@ class Maps extends React.Component {
         })
         );
 
-      // enable scroll only if CTRL is held
-      // map.scrollZoom.disable();
-      // map.scrollZoom.setWheelZoomRate(0.02);
-      // map.on("wheel", event => {
-      //   if (event.originalEvent.ctrlKey) { 
-      //     event.originalEvent.preventDefault(); 
-      //     if (!map.scrollZoom._enabled) map.scrollZoom.enable(); 
-      //   } else {
-      //     if (map.scrollZoom._enabled) map.scrollZoom.disable(); 
-      //   } 
-      // });
+    // enable scroll only if CTRL is held
+    // map.scrollZoom.disable();
+    // map.scrollZoom.setWheelZoomRate(0.02);
+    // map.on("wheel", event => {
+    //   if (event.originalEvent.ctrlKey) { 
+    //     event.originalEvent.preventDefault(); 
+    //     if (!map.scrollZoom._enabled) map.scrollZoom.enable(); 
+    //   } else {
+    //     if (map.scrollZoom._enabled) map.scrollZoom.disable(); 
+    //   } 
+    // });
 
  
 
@@ -511,6 +566,9 @@ class Maps extends React.Component {
       ShowAllRoutes();
       PeakPopUp();
       SetIcons();
+      if (sitePath.length > 5) { // posts page show only one route
+        ShowSelectedRoute()
+      }
     });
 
 
