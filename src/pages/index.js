@@ -31,7 +31,7 @@ export default function Home({data}) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {lang: {eq: "slo"}}}) {
+    allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___title]}, filter: {frontmatter: {lang: {eq: "slo"}}, fields: {slug: {regex: "/^.slo/"} }}) {
       totalCount
       edges {
         node {

@@ -91,6 +91,7 @@ class Maps extends React.Component {
                 'originalColor': item.color,
                 'route': item.route,
                 'page': item.page,
+                'parts': item.parts,
                 'alternative': item.alternative,
                 'hiddenRoute': item.hiddenRoute
                 },
@@ -377,10 +378,13 @@ class Maps extends React.Component {
     oneRouteCollection = [];
     limitedRouteCollection = [];
     //split selected route from other route from collection
+    console.log("e "+e)
     if (e === undefined) { // for post pages
       SliceURL();
       routeCollection.forEach(function(item) { 
+        console.log("item "+item);
         if (routeName === item.properties.page) {
+          console.log(".page "+ item.properties.page)
           oneRouteCollection.push(item);          
         } else {
           limitedRouteCollection.push(item);
@@ -395,6 +399,7 @@ class Maps extends React.Component {
         }   
       }); 
     }
+    console.log(oneRouteCollection);
   }
 
   // Show single (selected) route
@@ -402,6 +407,8 @@ class Maps extends React.Component {
     resetColor();
     ExtractSelectedRoute(e);
     // remove alternative routes from collection (different styling)
+    console.log(oneRouteCollection);
+    console.log(oneRouteCollection[0].properties.alternative);
     if (typeof oneRouteCollection[0].properties.alternative !== 'undefined') {
       oneRouteCollection[0].properties.alternative.forEach(function(alternativeRoute) {
         removeFromArray(limitedRouteCollection,alternativeRoute);
@@ -559,22 +566,19 @@ class Maps extends React.Component {
     // });
 
  
+         // on load config and populate screen with routes
+         oneRouteCollection = [];
+         ShowAllRoutes();
+         PeakPopUp();
+         SetIcons();
+         if (sitePath.length > 5) { // posts page show only one route
+           ShowSelectedRoute()
+         }
+     });
 
+    
 
-      // on load config and populate screen with routes
-      oneRouteCollection = [];
-      ShowAllRoutes();
-      PeakPopUp();
-      SetIcons();
-      if (sitePath.length > 5) { // posts page show only one route
-        ShowSelectedRoute()
-      }
-    });
-
-
-
-     	
-          
+  
 
 
 

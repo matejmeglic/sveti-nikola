@@ -14,13 +14,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <div className={"post"}>
         <header>
           <h1 style={{marginTop: rhythm(1), marginBottom: 0,}}>
+          <div id="pics"></div>
             {post.frontmatter.title}
           </h1>
         </header>
-       
-
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr style={{marginBottom: rhythm(8)}} />
+        <hr style={{marginBottom: rhythm(2)}} />
+        
       </div>
     </Layout>
   )
