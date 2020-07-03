@@ -62,6 +62,10 @@ var translation; // find another way to return a translation from a function get
 
 class Maps extends React.Component {
 
+  constructor() {
+    super();
+    this.state = { stateRoute: "111" };
+  }
  
   // read json doc
   getRoutes(){
@@ -353,7 +357,7 @@ class Maps extends React.Component {
     if (trigger !== undefined) {
       pathLength = trigger;
     }
-    if ( pathLength > 5) { 
+    if ( pathLength > 5) {
       ShowSelectedRoute(); // posts page show only one route
     } else {
       clickOnRoute(); // general pages show all routes
@@ -378,13 +382,10 @@ class Maps extends React.Component {
     oneRouteCollection = [];
     limitedRouteCollection = [];
     //split selected route from other route from collection
-    console.log("e "+e)
     if (e === undefined) { // for post pages
       SliceURL();
       routeCollection.forEach(function(item) { 
-        console.log("item "+item);
         if (routeName === item.properties.page) {
-          console.log(".page "+ item.properties.page)
           oneRouteCollection.push(item);          
         } else {
           limitedRouteCollection.push(item);
@@ -399,7 +400,6 @@ class Maps extends React.Component {
         }   
       }); 
     }
-    console.log(oneRouteCollection);
   }
 
   // Show single (selected) route
@@ -407,8 +407,6 @@ class Maps extends React.Component {
     resetColor();
     ExtractSelectedRoute(e);
     // remove alternative routes from collection (different styling)
-    console.log(oneRouteCollection);
-    console.log(oneRouteCollection[0].properties.alternative);
     if (typeof oneRouteCollection[0].properties.alternative !== 'undefined') {
       oneRouteCollection[0].properties.alternative.forEach(function(alternativeRoute) {
         removeFromArray(limitedRouteCollection,alternativeRoute);
@@ -574,6 +572,7 @@ class Maps extends React.Component {
          if (sitePath.length > 5) { // posts page show only one route
            ShowSelectedRoute()
          }
+
      });
 
     

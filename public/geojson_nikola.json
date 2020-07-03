@@ -51,18 +51,18 @@
             "hiddenRoute": ["Road Sveta Nedelja - Jagodna"]        
         },
         {
-            "route": "Svirče East",
-            "page": "Svirče-East",
+            "route": "Svirce East",
+            "page": "Svirce-East",
             "color":  "#477d00",
             "parts": ["svirce-plateau","svirce-plateau-east-plateaujagodna-crossroads","svirce-east-plateaujagodna-crossroads-top"],
-            "alternative": ["Svirče"]        
+            "alternative": ["Svirce"]        
         },       
         {
-            "route": "Svirče",
-            "page": "Svirče",
+            "route": "Svirce",
+            "page": "Svirce",
             "color": "#0dc400",
             "parts": ["svirce-plateau","svirce-plateau-kolumbic","kolumbic-top","kolumbic-nedeljaExit", "nedeljaExit-top"],
-            "alternative": ["Svirče East"]           
+            "alternative": ["Svirce East"]           
         },
         {
             "route": "Tunel",
