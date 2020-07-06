@@ -62,11 +62,6 @@ var translation; // find another way to return a translation from a function get
 
 class Maps extends React.Component {
 
-  constructor() {
-    super();
-    this.state = { stateRoute: "111" };
-  }
- 
   // read json doc
   getRoutes(){
     $.ajax({
@@ -367,13 +362,25 @@ class Maps extends React.Component {
 
   // extract post name from url
   function SliceURL() {
-    
-    if (charPosition === 4) {
-      routeName = sitePath.slice(4);
-      routeName = routeName.substring(0, routeName.length - 1);
-    } else if (charPosition === 5) {
-      routeName = sitePath.slice(5);
-      routeName = routeName.substring(0, routeName.length - 1);
+    var lastChar = sitePath[sitePath.length-1];
+    if (lastChar === "/") {
+      // if last char is "/" - gatsby specific
+      if (charPosition === 4) {
+        routeName = sitePath.slice(4);
+        routeName = routeName.substring(0, routeName.length - 1);
+      } else if (charPosition === 5) {
+        routeName = sitePath.slice(5);
+        routeName = routeName.substring(0, routeName.length - 1);
+      }
+    } else {
+      // if last char is not "/"
+      if (charPosition === 4) {
+        routeName = sitePath.slice(4);
+        routeName = routeName.substring(0, routeName.length);
+      } else if (charPosition === 5) {
+        routeName = sitePath.slice(5);
+        routeName = routeName.substring(0, routeName.length);
+      }
     }
   }
 
@@ -603,7 +610,7 @@ class Maps extends React.Component {
         <div id="peak"></div>
         <div id="scrollWarning"></div>
         <div id="hello-world"></div>
-        
+        <div className="wrapper">{this.props.children}</div>
 
 
       </div>

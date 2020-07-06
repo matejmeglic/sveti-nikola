@@ -97,6 +97,11 @@
   text-align: justify;
 }
 
+.post img {
+  border: 2px solid #fff;
+  
+}
+
 .menu {
   position:absolute;
   top: 7vh;

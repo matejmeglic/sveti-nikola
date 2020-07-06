@@ -22,6 +22,7 @@
     "gatsby-plugin-typography": "^2.5.1",
     "gatsby-remark-images": "^3.3.3",
     "gatsby-source-filesystem": "^2.3.3",
+    "gatsby-transformer-json": "^2.4.10",
     "gatsby-transformer-remark": "^2.8.8",
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.11.0",

@@ -25,12 +25,7 @@ export default function Layout({ children }) {
         <Link to={`/`} id="SLO" className ="link">SLO</Link>
         <Link to={`/hr/`} id="HR" className ="link">HR</Link>
       </div>
-      <Maps></Maps>     
-      <div className="wrapper"> 
-      {children}
-      </div>
-
-      
+      <Maps>{children}</Maps>      
     </div>
   )
 }
