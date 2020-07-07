@@ -140,6 +140,10 @@
   margin-right: 1.5vh;
 }
 
+.content {
+  width: 62vw;
+}
+
 .warnings{
   font-size: 16px;
   font-style: italic;

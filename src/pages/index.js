@@ -51,7 +51,8 @@ export default function Home({data}) {
       <Maps geoJsonData={jsonData} />
       <div className="wrapper">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
+          
+          <div key={node.id} className="content">
           <RouteColor title={node.frontmatter.title} jsonData={jsonData} cssClass="boxColorMain"></RouteColor>
           <span className="boxInfo">
             <Link to={node.fields.slug} css={css`text-decoration: none; color: inherit;`}>
