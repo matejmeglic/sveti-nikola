@@ -68,7 +68,7 @@ const BlogPostTemplate = ({ data }) => {
  
   return (
   <div>
-      <SEO title={post.frontmatter.title} description={post.excerpt} lang={language}/>
+      <SEO title={post.frontmatter.title} description={post.excerpt}/>
       <Layout title={siteTitle} />
       <Maps geoJsonData={jsonData} />
       <div className="post">
