@@ -8,6 +8,7 @@ This is a project that describes all ascents to Saint Nikola peak - Island Hvar 
 - components/RouteColor.js extracts color from json for visual separation of the routes
 - language selection work based on url (pathname) that depends on md file structure (i created separate folders for different languages AND lang frontmatter property that is also used in blog-post.js)
 - geojson gets loaded during build-time which is preferred way so that we can use translations on all pages (instead of previously used jquery in the component)
+- get **mapbox gl **api key to show maps and limit it to your domain
 
 # GeoJson file
 ### Extract coordinates from google maps
