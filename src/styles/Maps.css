@@ -45,22 +45,26 @@
   height: 5vh;
   font: 'Helvetica Neue', sans-serif;
   margin-bottom: 10px;
+  color: #225d86;
 }
 
 .navigation h1 {
   margin-left:40px;
   margin-top: 2vh;
-
   display: inline-block;
   font-style: normal;
-  font-size: 25px;
+  font-size: 30px;
   font: 'Helvetica Neue', sans-serif;
-  
+  color: #225d86;
+}
+
+.navigation a{
+  font-weight: 600;
 }
 
 .link {
   float: right; 
-  margin-top: 20px;
+  margin-top: 3vh;
   margin-left:10px;
   text-decoration: none;
   font: 16px/20px 'Helvetica Neue', sans-serif;
@@ -68,7 +72,7 @@
 
 .last {
   float: right; 
-  margin-top: 20px;
+  margin-top: 3vh;
   margin-left:10px;
   margin-right:20px;
   text-decoration: none;
@@ -85,10 +89,24 @@
 
 #hello-world {
   margin: auto;
-  width:80vw;
-  margin-top:30px;
-  margin-bottom:20px;
+  width:70vw;
+  margin-top:5px;
+  margin-bottom:30px;
+  text-align: right;
+}
+
+ a {
   font: 16px/20px 'Helvetica Neue', sans-serif;
+  color: #3887be;
+  text-decoration: none;
+}
+
+.peak360 {
+  position: absolute;
+  margin-top:5vh;
+  left:5%;
+  right:5%;
+  width: 90%;
 }
 
 .post {
@@ -100,6 +118,31 @@
 .post img {
   border: 2px solid #fff;
   
+}
+
+.boxColor{
+  width: 3%;
+  float:left;
+  background-color: #75CFF0;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 16vh;
+  margin-right: 1.5vh;
+}
+
+.boxColorMain{
+  width: 2.7%;
+  float:left;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 11vh;
+  margin-right: 1.5vh;
+}
+
+.warnings{
+  font-size: 16px;
+  font-style: italic;
 }
 
 .menu {
@@ -151,4 +194,54 @@
         padding: 6px;
         font:13px/20px 'Helvetica Neue', sans-serif;
       }
+
+      .navigation h1 {
+        margin-left:15px;
+        margin-top: 2vh;
+        font-size: 22px;
+
+      }
+
+      .link {
+        float: right; 
+        margin-top: 2.7vh;
+      }
+      
+      .last {
+        margin-top: 2.7vh;
+      }
+
+      .boxColor{
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 1vh;
+        padding-bottom: 18vh;
+
+      }
+
+      .boxColorMain{
+        width: 5%;
+        float:left;
+        padding-right: 1vw;
+        padding-top: 1vh;
+        padding-bottom: 20vh;
+        margin-right: 1.5vh;
+      }
+
+      .post {
+        max-width: 85vw;
+      }
+
+      #hello-world {
+        margin: auto;
+        width:90vw;
+        margin-top:5px;
+        margin-bottom:30px;
+        text-align: right;
+      }
+
+      .warnings{
+        font-size: 15px;
+      }
+
     }

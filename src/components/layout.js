@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import {useStaticQuery, graphql} from "gatsby"
-import Maps from "./Maps"
 
-export default function Layout({ children }) {
+export default function Layout() {
     const data = useStaticQuery(
         graphql`
           query {
@@ -16,6 +15,8 @@ export default function Layout({ children }) {
         `
       )
 
+            
+
     return (
     
     <div>
@@ -24,8 +25,9 @@ export default function Layout({ children }) {
         <Link to={`/en/`} id="EN" className="link" className="last">EN</Link> 
         <Link to={`/`} id="SLO" className ="link">SLO</Link>
         <Link to={`/hr/`} id="HR" className ="link">HR</Link>
+        <Link to={`/360/`} id="360" className ="link">360</Link>
       </div>
-      <Maps>{children}</Maps>      
+       
     </div>
   )
 }

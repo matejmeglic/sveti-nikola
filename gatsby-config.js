@@ -44,5 +44,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./public/geojson_nikola.json`,
+      },
+    },
+
   ],
 }

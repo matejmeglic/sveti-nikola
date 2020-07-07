@@ -2,14 +2,14 @@
 lang: "slo"
 title: "Sveta Nedelja Ferata"
 date: "2020-06-20"
-length: ""
-time: ""
-maps-track: ""
+length: "/"
+time: "/"
+mapstrack: "/"
 warning: ""
 marked: "y"
-bike-friendly: "n"
-car-friendly: "n"
-4x4-friendly: "n"
+bikefriendly: "n"
+carfriendly: "n"
+offroadfriendly: "n"
 ---
 
 Opozorilo: Avtorji ne plezamo ferat, zato te poti nismo fizično preplezali in se pri opisu poslužujemo pregleda map, opazovanja dejanskega stanja in raziskave na spletu. Če boste ferato dokumentirali podrobneje, se nam javite.

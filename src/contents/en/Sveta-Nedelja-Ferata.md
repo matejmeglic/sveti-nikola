@@ -1,15 +1,15 @@
 ---
 lang: "en"
-title: "Sveta Nedelja"
+title: "Sveta Nedelja Ferata"
 date: "2020-06-20"
-length: ""
-time: ""
-maps-track: ""
+length: "/"
+time: "/"
+mapstrack: "/"
 warning: ""
 marked: "y"
-bike-friendly: "n"
-car-friendly: "n"
-4x4-friendly: "n"
+bikefriendly: "n"
+carfriendly: "n"
+offroadfriendly: "n"
 ---
 
 This appears to be the most touristy and the best hiking approach (Tunel road is easiest by car). The whole path was well maintained (grass was cut for better visibility and overall feel). Park at the ex bus stop near the sign for the cave (špilja) and continue your way through the village. As you reach the top you arrive at the crossroads. Follow the left path that zig-zags above the village. Every turn is clearly marked and in 30 minutes you arrive at the first (called Wide) cave (look on your right as the cave is 50m above the road). As you continue your ascent you will see two via-ferrata climbing paths on your right. 

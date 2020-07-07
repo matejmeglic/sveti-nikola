@@ -51,18 +51,18 @@
             "hiddenRoute": ["Road Sveta Nedelja - Jagodna"]        
         },
         {
-            "route": "Svirce East",
+            "route": "Svirče East",
             "page": "Svirce-East",
             "color":  "#477d00",
             "parts": ["svirce-plateau","svirce-plateau-east-plateaujagodna-crossroads","svirce-east-plateaujagodna-crossroads-top"],
-            "alternative": ["Svirce"]        
+            "alternative": ["Svirče"]        
         },       
         {
-            "route": "Svirce",
+            "route": "Svirče",
             "page": "Svirce",
             "color": "#0dc400",
             "parts": ["svirce-plateau","svirce-plateau-kolumbic","kolumbic-top","kolumbic-nedeljaExit", "nedeljaExit-top"],
-            "alternative": ["Svirce East"]           
+            "alternative": ["Svirče East"]           
         },
         {
             "route": "Tunel",
@@ -352,7 +352,224 @@
             "hr":"",
             "en":"Hide"          
             }
+        },
+        {
+            "item":"backToFirstPage",
+            "translation":
+            {
+            "slo":"Nazaj na vse opise poti",
+            "hr":"AAA",
+            "en":"Back to all route descriptions"          
+            }
+        },
+        {
+            "item":"post_marked",
+            "translation":
+            {
+            "slo":"Markirana pot",
+            "hr":"Markirani put",
+            "en":"Marked path (follow the signs)"          
+            }
+        },        
+        {
+            "item":"post_notmarked",
+            "translation":
+            {
+            "slo":"Nemarkirana pot",
+            "hr":"Nemarkirani put",
+            "en":"Path not marked (no signs)"          
+            }
+        },
+        {
+            "item":"bikefriendly",
+            "translation":
+            {
+            "slo":"Pot primerna za gorsko kolesarjenje.",
+            "hr":"Staza je pogodna za brdski biciklizam.",
+            "en":"Mountain bike friendly path."          
+            }
+        },
+        {
+            "item":"carfriendly",
+            "translation":
+            {
+            "slo":"Pot primerna za osebno vozilo.",
+            "hr":"Put je pogodan za osobno vozilo.",
+            "en":"Path suitable for normal car approach."          
+            }
+        },
+        {
+            "item":"offroadfriendly",
+            "translation":
+            {
+            "slo":"Pot primerna za vozilo s 4x4 pogonom.",
+            "hr":"Put je pogodan za vozilo s pogonom 4x4.",
+            "en":"Path suitable for 4x4 car approach."          
+            }
+        },
+        {
+            "item":"post_warning_snakes",
+            "translation":
+            {
+            "slo":"Pazite na kače. Podučite se o nevarnostih v gorah, o težavah reševanja v gorah in potencialnega premika poškodovancev v bolnišnično oskrbo iz otoka, preden se podate v gore.",
+            "hr":"Pazite na zmije. Saznajte o opasnostima u planinama, problemima spašavanja u planinama i potencijalnom pomaku ozlijeđenih s otoka u bolnicu prije nego što krenete u planine.",
+            "en":"Watch for snakes. Read about problems with mountain rescue services on the island and transportation to the mainland ahead of time. Do your research."          
+            }
+        },
+        {
+            "item":"post_warning_equipment",
+            "translation":
+            {
+            "slo":"Uporabljajte primerno opremo za obisk gora (pohodne palice, visoki pohodni čevlji, dolge hlače).",
+            "hr":"Koristite prikladnu opremu za posjetu planinama (planinarske palice, visoke planinarske cipele, duge hlače).",
+            "en":"Use appropriate hiking gear and equipment (hiking poles, high hiking boots, long pants)."          
+            }
+        },
+        {
+            "item":"post_warning_water",
+            "translation":
+            {
+            "slo":"S seboj vzemite veliko vode (na poti ni nobenega vodnega zajetja, potoka).",
+            "hr":"Ponesite sa sobom puno vode (na putu nema izvora vode).",
+            "en":"Bring a lot of water with you (no access to the water along the way)."          
+            }
+        },
+        {
+            "item":"post_warning_condition",
+            "translation":
+            {
+            "slo":"Izberite svoji kondiciji primerno pristopno pot.",
+            "hr":"Odaberite put primjeren vašoj psihofizičkoj kondiciji i sposobnostima.",
+            "en":"Choose a path based on your hiking conditions."          
+            }
+        },
+        {
+            "item":"post_warning_generalDanger",
+            "translation":
+            {
+            "slo":"Gorništvo je lahko nevarno - V hribih ste odgovorni za svojo varnost.",
+            "hr":"Planinarstvo može biti opasno - U planinama ste odgovorni za vlastitu sigurnost.",
+            "en":"Hiking is potentially dangerous - Hike at your own risk."          
+            }
+        },
+        {
+            "item":"post_warning_responsibility",
+            "translation":
+            {
+            "slo":"Ta spletna stran služi samo zbiranju informacij, avtorji ne prevzemamo nobene odgovornosti za vaše zdravje.",
+            "hr":"Ova web stranica služi samo za prikupljanje informacija, autori ne preuzimaju nikakvu odgovornost za vaše zdravlje.",
+            "en":"This map is for educational purposes only, authors take no responsibility for your health."          
+            }
+        },
+        {
+            "item":"post_notEnoughData",
+            "translation":
+            {
+            "slo":"Nimamo dovolj podatkov o pristopu - vrisana pot ni pravilna (vrisane so samo osnovne poti glede na pridobljeno znanje in raziskave avtorjev).",
+            "hr":"Nema dovoljno podataka o ovom putu - staza nije pravilno označena (prikazane su samo osnovni putevi prema znanju autora i istraživanjima).",
+            "en":"Not enough data about this hike - path not marked correctly (only general directions shown according to authors knowledge and research)."          
+            }
+        },
+        {
+            "item":"post_alternativeReturnNOTUSED",
+            "translation":
+            {
+            "slo":"Pri povratku se lahko vrnete po poti XXX in naredite krožno pot (se vrnete na izhodišče).",
+            "hr":"Na povratku se možete vratiti na put XXX i napravite kružnu rutu (povratak na početnu točku).",
+            "en":"You can return over XXX route to make a circle and walk two approaches (you return at your starting point)."          
+            }
+        },
+        {
+            "item":"post_alternativeCircleReturnNOTUSED",
+            "translation":
+            {
+            "slo":"Pri povratku se lahko vrnete po poti XXX in naredite krožno pot, a morate hoditi XXX kilometrov po cesti, da se vrnete na izhodišče.",
+            "hr":"Na povratku se možete vratiti na XXX put i napravite kružnu rutu, ali morate prijeći XXX kilometara cestom da biste se vratili na početnu točku.",
+            "en":"You can return over XXX route to make a circle and walk two approaches, but you have to walk on the main roads for XXX kilometers to return to your starting point."          
+            }
+        },
+        {
+            "item":"post_help_project",
+            "translation":
+            {
+            "slo":"Si želiš odpraviti napake na obstoječih poteh ali pa dodati še kakšno novo, nevrisano pot? Izberi dan s primernim (ne prevročim) vremenom in primerno gorniško opremo, startaj zgodaj zjutraj in uživaj v raziskovanju. Bodi varen (pazi na kače) in ne pozabi povedat svojim bližnjim, kam si namenjen in kaj boš počel. Redno jim pošiljaj sporočila o napredku, da lahko pomagajo v primeru težav. Posnemi čim več fotografij (pot v obe smeri, razgled) in dokumentiraj vsako odločitev, ki povprečnemu gorniku ni samoumevna (križišča v vse smeri). Dobro si zapomni vse odločitve, ki si jih sprejel (na križišču zaviješ ...), v kolikor nam lahko pošlješ GPS track, je to še toliko boljše. Po uspešno zaključenem podvigu nas kontaktiraj na matej@matejmeglic.com.",
+            "hr":"Želite li ispraviti pogreške na postojećim rutama ili dodati nov, neucrtan put? Odaberite dan s ugodnim (ne previše vrućim) vremenom i prikladnom planinarskom opremom, počnite rano ujutro i uživajte u istraživanju. Budite sigurni (pazite na zmije) i ne zaboravite reći svojim voljenima kuda se krećete i što ćete raditi. Redovno im šaljite poruke o napretku kako bi vam mogli pomoći u slučaju problema. Napravite što više fotografija (staza u oba smjera, pogled) i dokumentirajte svaku odluku koja prosječnom planinaru nije jasna (raskrižja u svim smjerovima). Sjetite se svih odluka koje ste donijeli (skretanje na raskrižju ...), ako nam možete poslati GPS zapis, još bolje. Kontaktirajte nas nakon uspješnog pothvata na matej@matejmeglic.com.",
+            "en":"Do you want to help document an non-existing path or just record a change on the path? Grab appropriate equipment, pick good and not-too-warm weather (hike early in the morning), go hike and explore the wild safely (watch for snakes) and don’t forget to tell your loved ones your plan so that they can help you out. Post updates as you go. Take loads of pictures (of the path in both directions, document any non-arbitrary decision you had to take and every interesting sign that could help other hikers orient) and remember where you turned (if you can provide a GPS track, even better). After the successful hike, send us a message at matej@matejmeglic.com."          
+            }
+        },
+        {
+            "item":"post_github",
+            "translation":
+            {
+            "slo":"Si želite postaviti podoben projekt za svoj najljubši hrib? Prvi korak je dokumentacija na Githubu: ",
+            "hr":"Želite napraviti sličan projekt za svoju omiljeno planinu? Pogledajte dokumentaciju na Githubu: ",
+            "en":"Do you want to set up a similar project for your favourite mountain? Check documentation on Github: "          
+            }
+        },
+        {
+            "item":"label_lastUpdated",
+            "translation":
+            {
+            "slo":"Posodobljeno: ",
+            "hr":"AAA",
+            "en":"Last updated: "          
+            }
+        },
+        {
+            "item":"label_routeLength",
+            "translation":
+            {
+            "slo":"Dolžina: ",
+            "hr":"AAA",
+            "en":"Route length: "          
+            }
+        },
+        {
+            "item":"label_routeDuration",
+            "translation":
+            {
+            "slo":"Trajanje: ",
+            "hr":"AAA",
+            "en":"Time estimate: "          
+            }
+        },
+        {
+            "item":"label_routeDescription",
+            "translation":
+            {
+            "slo":"Opis poti",
+            "hr":"AAA",
+            "en":"Route description"          
+            }
+        },
+        {
+            "item":"label_warning",
+            "translation":
+            {
+            "slo":"Splošni napotki",
+            "hr":"AAA",
+            "en":"Something to keep in mind ..."          
+            }
+        },
+        {
+            "item":"label_authors",
+            "translation":
+            {
+            "slo":"Ideja in izvedba: Matej Meglič, zahvala za hrvaški prevod: Tea Logar.",
+            "hr":"AAA",
+            "en":"Created by Matej Meglič, kudos to Tea Logar who contributed croatian translations."          
+            }
+        },
+        {
+            "item":"label_about",
+            "translation":
+            {
+            "slo":"O projektu",
+            "hr":"AAA",
+            "en":"About the project"          
+            }
         }
+        
     ]
     ,
     "routes-full-legacy": [
