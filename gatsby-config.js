@@ -7,6 +7,8 @@
 module.exports = {
   siteMetadata: {
     title: `Sveti Nikola - Hvar`,
+    description: `Hike highest peak of island Hvar - Sveti Nikola.`,
+    author: `Matej Meglič`,
   },
   plugins: [
     {
@@ -53,5 +55,20 @@ module.exports = {
       },
     },
 
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Sveti Nikola - hike Hvar`,
+        short_name: `Hike Hvar`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        display: `standalone`,
+        icon: `src/components/misc/web_images/favicon-96x96.png`, 
+      },
+    },
+
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 }
