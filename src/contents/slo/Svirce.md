@@ -54,4 +54,3 @@ Alternativno se lahko vrnemo v Svirče po vzhodnem pristopu.
 ![6](../images/nedelja-top/6.jpg)
 ![7](../images/nedelja-top/7.jpg)
 ![8](../images/nedelja-top/8.jpg)
-

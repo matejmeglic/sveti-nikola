@@ -12,7 +12,7 @@ carfriendly: "n"
 offroadfriendly: "n"
 ---
 
-Opozorilo: Avtorji ne plezamo ferat, zato te poti nismo fizično preplezali in se pri opisu poslužujemo pregleda map, opazovanja dejanskega stanja in raziskave na spletu. Če boste ferato dokumentirali podrobneje, se nam javite.
+**Opozorilo: **Avtorji ne plezamo ferat, zato te poti nismo fizično preplezali in se pri opisu poslužujemo pregleda map, opazovanja dejanskega stanja in raziskave na spletu. Če boste ferato dokumentirali podrobneje, se nam javite.
 
 Parkiramo pri bivši avtobusni postaji (prvi znak za špiljo - jamo) in se skozi vas povzpnemo do drugega znaka (viden iz parkirišča nad vsemi hišami). Pri križišču izberemo levo, ki se cik-cak (vsak ovinek je označen) vzpenja in v 30 minutah dosežemo prvo, Široko jamo (jama se nahaja 50m nad potjo). Vstopa v obe ferati se začnete približno 150m po tem, ko se vrnemo na pot (neoznačeno, pogled nazaj).
 

@@ -64,4 +64,3 @@ To je najlažja pot do vrha z avtomobilom (betonsko makadamska ponekod slabo vzd
 ![6](../images/nedelja-top/6.jpg)
 ![7](../images/nedelja-top/7.jpg)
 ![8](../images/nedelja-top/8.jpg)
-

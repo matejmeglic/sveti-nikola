@@ -1,5 +1,5 @@
 ---
-lang: "slo"
+lang: "hr"
 title: "Svirče East"
 date: "2020-06-20"
 length: "6.6 km"
@@ -12,9 +12,10 @@ carfriendly: "n"
 offroadfriendly: "y"
 ---
 
-Sledimo cesti do konca naselja in parkiramo nekje ob poti (ali višje, če si želimo skrajšati pohod). Čez majhen most pri prvem križišču izberemo levo pot, nato pa po nekaj 100 metrih na naslednjem križišču za kozjo farmo izberemo desno pot (sledimo znaku za kolesarsko pot 708). Mestoma makadamska ali betonirana pot se zložno vzpenja med polji sivke dokler ne dosežemo naslednjega križišča, kjer izberemo zgornjo, levo pot. V enem kilometru strme poti dosežemo levi ovinek, ki nam odpre pogled v prihajajočo dolino, zapre pa nam pogled na Svirče in Jelso (nazaj). Poti skozi dolino sledimo proti vrhu (na edinem križišču nadaljujemo naravnost) in le-ta nas v dveh serpentinah pripelje na križišče, kjer zavijemo desno na planoto. Odpre se nam pogled na vrh. Sledimo glavni makadamski poti (1 km) do sredine planote (ko prispemo do kapelice na desni strani) se na levi strani odcepi pot za vzhodni dostop do vrha. Pot je zaraščena (ročno napisan znak nas usmeri v ozek koridor med dvema poljema, zapustimo glavno cesto). Sledimo nevzdrževani, zaraščeni poti na drugo stran polja (proti vrhu, prvih 50m veliko grmovja, nato ok). Poiščemo pot, ki se v začetku serpentinasno pne proti vrhu skozi redek gozd in se priključi pešpoti iz Svete Nedilje - vzhodni pristop. Na razpotju zavijemo desno in v 20 minutah dosežemo vrh.
+Slijedite put do kraja sela i parkirajte se negdje uz put (ili više ako si želite skratiti pješačenje). Preko malog mosta na prvom raskrižju odaberite lijevu stazu, a zatim nakon nekoliko stotina metara na sljedećem raskrižju za farmu koza odaberite pravu stazu (slijedite znak za biciklističku stazu 708). Na nekim mjestima makadam ili betonska staza strmo se penju između polja lavande dok ne stignemo do sljedećeg raskrižja, gdje odaberemo gornju, lijevu stazu. Nakon jednog kilometra strme staze dolazimo do lijevog zavoja, s kojeg se pruža pogled na nadolazeću dolinu, a zatvara se pogled na Svirče i Jelsu (natrag). Pratimo stazu kroz dolinu prema vrhu (na jedinom raskrižju nastavljamo ravno naprijed) i ona nas u dvije serpentine vodi do raskrižja, gdje skrećemo desno na visoravan. Otvara nam se pogled na vrh. Pratimo glavnu makadamsku stazu (2 km) koja se u zadnjem dijelu umjereno uzdiže i dovodi do gornjeg dijela visoravni. Na sredini visoravni kod kapelice s desne strane posle 100m skrenite lijevo (ručno napisani znak usmjerava nas u uski koridor između dva polja, napustimo glavnu cestu). Slijedimo neodržavanu obraslu stazu na drugi strani polja (prema vrhu, prvih 50 m ima puno grmlja, a zatim ok). Pronalazimo stazu koja se na početku uzdiže serpentinom prema vrhu kroz rijetku šumu i spaja se sa pješačkom stazom od Svete Nedilje - istočni prilaz. Na raskrižju skrenite desno i stižete do vrha za 20 minuta.
 
-Alternativno se lahko vrnemo v Svirče po zahodnem pristopu mimo turistične kmetije.
+Alternativno, možemo se vratiti u Svirče putem zapadnog prilaza.
+
 
 ![1](../images/svirce-plateau/1.jpg)
 ![2](../images/svirce-plateau/2.jpg)

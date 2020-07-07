@@ -86,5 +86,3 @@ Vrnete se lahko po poti Sveta Nedelja East in naredite krog.
 ![6](../images/nedelja-top/6.jpg)
 ![7](../images/nedelja-top/7.jpg)
 ![8](../images/nedelja-top/8.jpg)
-
-

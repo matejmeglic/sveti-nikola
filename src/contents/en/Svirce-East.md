@@ -1,5 +1,5 @@
 ---
-lang: "slo"
+lang: "en"
 title: "Svirče East"
 date: "2020-06-20"
 length: "6.6 km"
@@ -12,9 +12,10 @@ carfriendly: "n"
 offroadfriendly: "y"
 ---
 
-Sledimo cesti do konca naselja in parkiramo nekje ob poti (ali višje, če si želimo skrajšati pohod). Čez majhen most pri prvem križišču izberemo levo pot, nato pa po nekaj 100 metrih na naslednjem križišču za kozjo farmo izberemo desno pot (sledimo znaku za kolesarsko pot 708). Mestoma makadamska ali betonirana pot se zložno vzpenja med polji sivke dokler ne dosežemo naslednjega križišča, kjer izberemo zgornjo, levo pot. V enem kilometru strme poti dosežemo levi ovinek, ki nam odpre pogled v prihajajočo dolino, zapre pa nam pogled na Svirče in Jelso (nazaj). Poti skozi dolino sledimo proti vrhu (na edinem križišču nadaljujemo naravnost) in le-ta nas v dveh serpentinah pripelje na križišče, kjer zavijemo desno na planoto. Odpre se nam pogled na vrh. Sledimo glavni makadamski poti (1 km) do sredine planote (ko prispemo do kapelice na desni strani) se na levi strani odcepi pot za vzhodni dostop do vrha. Pot je zaraščena (ročno napisan znak nas usmeri v ozek koridor med dvema poljema, zapustimo glavno cesto). Sledimo nevzdrževani, zaraščeni poti na drugo stran polja (proti vrhu, prvih 50m veliko grmovja, nato ok). Poiščemo pot, ki se v začetku serpentinasno pne proti vrhu skozi redek gozd in se priključi pešpoti iz Svete Nedilje - vzhodni pristop. Na razpotju zavijemo desno in v 20 minutah dosežemo vrh.
+After the end of the settlement, park your car along the way and follow the road over a small bridge (you can park higher on the road if you want to, there are plenty of side spots one can leave the car). Pick the left road and after a couple of hundred meters, at the crossroads behind the goat farm, pick the right road (follow signs for bicycle route no 708). The interchangeable gravel and paved road will steadily wind between lavender fields until you reach the next crossroads where you again pick the left road that leads uphill. In one kilometer you will reach the left turn that leads into the valley, here you can see the view towards Svriče and Jelsa for the last time. Follow the road through the valley and you will arrive at the plateau crossroads in 15min. Follow the road right in the direction of Saint Nikola peak that becomes visible. Gravel road winds through the fields for the next two kilometers (at the only crossroads continue straight) that lifts up to the upper plateau at the end. At the chapel on the right side, leave main gravel road and turn left (at the handwritten sign at the top of the dry-stone wall). Follow the narrow unmaintained path (bushes, first 50m are tricky, would recommend checking if you can carefully walk in the field without damaging the crops) between two fields to reach the other side of the stone fence (150m). Find a path that leads towards the peak and climb through the trees until you reach the crossroads with the road coming from Sveta Nedelja-east. Turn right and continue in the peak direction that you will reach in 20 minutes.
 
-Alternativno se lahko vrnemo v Svirče po zahodnem pristopu mimo turistične kmetije.
+You can return to Svirče over western road making a circle approach.
+
 
 ![1](../images/svirce-plateau/1.jpg)
 ![2](../images/svirce-plateau/2.jpg)
