@@ -16,10 +16,6 @@ export default function RouteColor({title,jsonData, cssClass}) {
       <div>
         <span className={cssClass} css={css`background-color:${color};`} />
       </div>
-    )
-    
-    
-
-  
+    ) 
 }
 

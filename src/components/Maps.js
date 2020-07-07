@@ -6,7 +6,7 @@ import $ from 'jquery';
 import pic360 from "../contents/images/360/360_small/sveti_nikola_hvar_360-2.jpg"
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0ZWptZWdsaWMiLCJhIjoiY2tiZXpudm1iMHFvZDJ1cG1ub3pqaHZhMyJ9.lzD5DdQCear_9OR586acJQ';
-var lang; // = "slo"; //hardcoded value, change when in gatsby - HARDCODED CHANGE IF NEEDED
+var lang; // current language
 var routeCollection = []; // all routes from json
 var hiddenRouteCollection = []; // all hidden routes from json
 var iconsCollection = []; // all icons from json
@@ -31,7 +31,7 @@ var mapboxConfig = [ // settings for map based on the device (screen width)
     zoom: 12.4,
     normalLineWidth: 6,
     limitedLineWidth: 4,
-    selectedLineWidth: 10,
+    selectedLineWidth: 12,
   },
   {
     set: 'mobile',
@@ -39,7 +39,7 @@ var mapboxConfig = [ // settings for map based on the device (screen width)
     zoom: 11,
     normalLineWidth: 6,
     limitedLineWidth: 4,
-    selectedLineWidth: 8,
+    selectedLineWidth: 9,
   }
 ]
 var baseLayers = [  // mapbox config for changing backgrounds
@@ -56,9 +56,7 @@ var baseLayers = [  // mapbox config for changing backgrounds
 // TO-DO PROBLEMS
 
 var translation; // find another way to return a translation from a function getTranslation() - return doesn't work
-// absolute path for panorama picture 
 // double cleaning of forEach arrays (RemoveIcons() and currentVisibleLayer)
-// show selected path on default for post page
 // generate image gallery pages using gatsby
 
 
@@ -293,7 +291,6 @@ class Maps extends React.Component {
       if (peakShown === 0) {
           var showPeakImg = document.createElement('img');
           showPeakImg.src = pic360;
-          // showPeakImg.src = 'https://raw.githubusercontent.com/matejmeglic/sveti-nikola/master/src/contents/misc/web_images/panorama.jpg'; // change to dynamic path that will work with main pages and with posts as well 
           showPeakImg.alt = "Sveti Nikola - 626m";
           showPeakImg.title = "Sveti Nikola - 626m";
           imgDiv.innerHTML = "";
@@ -476,13 +473,6 @@ class Maps extends React.Component {
 
 
 
-
-
-
-
-  
-
-
     // actions
     // read json
     this.getRoutes();
@@ -508,12 +498,6 @@ class Maps extends React.Component {
     // load selected map
     map.on('style.load', function () {
       // Triggered when `setStyle` is called.
-      // if (routeName === undefined) {
-      //   if (routeCollection) ShowAllRoutes(); 
-      // } else {
-
-      // }
-      
       if (routeCollection) ShowAllRoutes();
     });
     
@@ -588,57 +572,38 @@ class Maps extends React.Component {
         })
         );
 
-    // enable scroll only if CTRL is held
-    // map.scrollZoom.disable();
-    // map.scrollZoom.setWheelZoomRate(0.02);
-    // map.on("wheel", event => {
-    //   if (event.originalEvent.ctrlKey) { 
-    //     event.originalEvent.preventDefault(); 
-    //     if (!map.scrollZoom._enabled) map.scrollZoom.enable(); 
-    //   } else {
-    //     if (map.scrollZoom._enabled) map.scrollZoom.disable(); 
-    //   } 
-    // });
-
+      // enable scroll only if CTRL is held
+      // map.scrollZoom.disable();
+      // map.scrollZoom.setWheelZoomRate(0.02);
+      // map.on("wheel", event => {
+      //   if (event.originalEvent.ctrlKey) { 
+      //     event.originalEvent.preventDefault(); 
+      //     if (!map.scrollZoom._enabled) map.scrollZoom.enable(); 
+      //   } else {
+      //     if (map.scrollZoom._enabled) map.scrollZoom.disable(); 
+      //   } 
+      // });
         
          // on load config and populate screen with routes
          oneRouteCollection = [];
          PeakPopUp();
-         SetIcons();
+         
       
      });
-
-    
-
-  
-
-
-
-
-     
-
+     SetIcons();
 
             
 
-  } //componentdidmount
-
-
+  } // end of componentdidmount
 
   render() {
-
-
     return (
-      
-      
       <div>
         <div id="map"></div>
         <nav id='menu' className='menu'></nav>
         <div id="peak"></div>
         <div id="scrollWarning"></div>
         <div id="hello-world"></div>
-        
-
-
       </div>
       );
   }
