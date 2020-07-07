@@ -51,6 +51,7 @@ export default function Home({data}) {
   return (
     <div>
       <Layout />
+      <SEO />
       <Maps geoJsonData={jsonData} />
       <div className="wrapper">
         {data.allMarkdownRemark.edges.map(({ node }) => ( 
