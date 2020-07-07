@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-
-
+import pic360_1 from "../contents/images/360/sveti_nikola_hvar_360-1.jpg"
+import pic360_2 from "../contents/images/360/sveti_nikola_hvar_360-6.jpg"
+import pic360_3 from "../contents/images/360/sveti_nikola_hvar_360-3.jpg"
+import pic360_4 from "../contents/images/360/sveti_nikola_hvar_360-5.jpg"
 
 export default function Home({data}) {
 
@@ -15,10 +15,10 @@ export default function Home({data}) {
     <div>
      <Layout></Layout>
             <div className="peak360">
-              <img src="sveti_nikola_hvar_360-1.jpg" alt="Sveti Nikola Hvar pano north" title="Sveti Nikola Hvar - North panorama" />
-              <img src="sveti_nikola_hvar_360-6.jpg" alt="Sveti Nikola Hvar pano east" title="Sveti Nikola Hvar - East panorama" />
-              <img src="sveti_nikola_hvar_360-3.jpg" alt="Sveti Nikola Hvar pano south" title="Sveti Nikola Hvar - South panorama" />
-              <img src="sveti_nikola_hvar_360-5.jpg" alt="Sveti Nikola Hvar pano west" title="Sveti Nikola Hvar - West panorama" />
+              <img src={pic360_1} alt="Sveti Nikola Hvar pano north" title="Sveti Nikola Hvar - North panorama" />
+              <img src={pic360_2} alt="Sveti Nikola Hvar pano east" title="Sveti Nikola Hvar - East panorama" />
+              <img src={pic360_3} alt="Sveti Nikola Hvar pano south" title="Sveti Nikola Hvar - South panorama" />
+              <img src={pic360_4} alt="Sveti Nikola Hvar pano west" title="Sveti Nikola Hvar - West panorama" />
           </div>
     </div>
     )

@@ -76,8 +76,8 @@ export default function Home({data}) {
             </ul>
           </div>
         <hr style={{marginBottom: rhythm(2)}} />
-        <h3>{translationResults[6]}</h3>
-          <div>  
+        <h4>{translationResults[6]}</h4>
+          <div className="warnings">    
             <ul>
               <li>{translationResults[7]}</li>
               <li>{translationResults[8]} <a href="https://github.com/matejmeglic/sveti-nikola" target="_blank" rel="noopener noreferrer">GH Repo</a></li>

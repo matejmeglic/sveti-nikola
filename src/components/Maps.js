@@ -3,6 +3,7 @@ import '../styles/Maps.css';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import $ from 'jquery';
+import pic360 from "../contents/images/360/sveti_nikola_hvar_360-2.jpg"
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0ZWptZWdsaWMiLCJhIjoiY2tiZXpudm1iMHFvZDJ1cG1ub3pqaHZhMyJ9.lzD5DdQCear_9OR586acJQ';
 var lang; // = "slo"; //hardcoded value, change when in gatsby - HARDCODED CHANGE IF NEEDED
@@ -291,7 +292,8 @@ class Maps extends React.Component {
       var imgDiv = document.getElementById('peak');  
       if (peakShown === 0) {
           var showPeakImg = document.createElement('img');
-          showPeakImg.src = 'https://raw.githubusercontent.com/matejmeglic/sveti-nikola/master/src/contents/misc/web_images/panorama.jpg'; // change to dynamic path that will work with main pages and with posts as well 
+          showPeakImg.src = pic360;
+          // showPeakImg.src = 'https://raw.githubusercontent.com/matejmeglic/sveti-nikola/master/src/contents/misc/web_images/panorama.jpg'; // change to dynamic path that will work with main pages and with posts as well 
           showPeakImg.alt = "Sveti Nikola - 626m";
           showPeakImg.title = "Sveti Nikola - 626m";
           imgDiv.innerHTML = "";
