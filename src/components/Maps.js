@@ -3,7 +3,7 @@ import '../styles/Maps.css';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import $ from 'jquery';
-import pic360 from "../contents/images/360/sveti_nikola_hvar_360-2.jpg"
+import pic360 from "../contents/images/360/360_small/sveti_nikola_hvar_360-2.jpg"
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0ZWptZWdsaWMiLCJhIjoiY2tiZXpudm1iMHFvZDJ1cG1ub3pqaHZhMyJ9.lzD5DdQCear_9OR586acJQ';
 var lang; // = "slo"; //hardcoded value, change when in gatsby - HARDCODED CHANGE IF NEEDED

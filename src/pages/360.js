@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import pic360_1 from "../contents/images/360/sveti_nikola_hvar_360-1.jpg"
-import pic360_2 from "../contents/images/360/sveti_nikola_hvar_360-6.jpg"
-import pic360_3 from "../contents/images/360/sveti_nikola_hvar_360-3.jpg"
-import pic360_4 from "../contents/images/360/sveti_nikola_hvar_360-5.jpg"
+import pic360_1 from "../contents/images/360/360_small/sveti_nikola_hvar_360-1.jpg"
+import pic360_2 from "../contents/images/360/360_small/sveti_nikola_hvar_360-6.jpg"
+import pic360_3 from "../contents/images/360/360_small/sveti_nikola_hvar_360-3.jpg"
+import pic360_4 from "../contents/images/360/360_small/sveti_nikola_hvar_360-5.jpg"
 
 export default function Home({data}) {
 
