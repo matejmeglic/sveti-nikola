@@ -13,7 +13,6 @@ export default function Home({data}) {
 
   return (
     <div>
-      <SEO title="Hvar 360 panorama" description="360 degrees on Sveti Nikola"/>
      <Layout></Layout>
             <div className="peak360">
               <img src={pic360_1} alt="Sveti Nikola Hvar pano north" title="Sveti Nikola Hvar - North panorama" />
