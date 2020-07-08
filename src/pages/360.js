@@ -5,6 +5,7 @@ import pic360_1 from "../contents/images/360/360_small/sveti_nikola_hvar_360-1.j
 import pic360_2 from "../contents/images/360/360_small/sveti_nikola_hvar_360-6.jpg"
 import pic360_3 from "../contents/images/360/360_small/sveti_nikola_hvar_360-3.jpg"
 import pic360_4 from "../contents/images/360/360_small/sveti_nikola_hvar_360-5.jpg"
+import SEO from "../components/seo"
 
 export default function Home({data}) {
 
@@ -13,6 +14,7 @@ export default function Home({data}) {
 
   return (
     <div>
+      <SEO title="Hvar 360 panorama" description="360 degrees on Sveti Nikola"/>
      <Layout></Layout>
             <div className="peak360">
               <img src={pic360_1} alt="Sveti Nikola Hvar pano north" title="Sveti Nikola Hvar - North panorama" />

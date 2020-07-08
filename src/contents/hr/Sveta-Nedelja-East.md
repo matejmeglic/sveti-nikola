@@ -2,7 +2,7 @@
 lang: "hr"
 title: "Sveta Nedelja East"
 date: "2020-06-20"
-length: "4 km"
+length: "6 km"
 time: "2h 30m"
 mapstrack: ""
 warning: ""

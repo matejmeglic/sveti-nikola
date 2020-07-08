@@ -5,6 +5,7 @@ import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
 import Maps from "../components/Maps"
 import RouteColor from "../components/RouteColor"
+import SEO from "../components/seo"
 
 export default function Home({data}) {
   const jsonData = data.allPublicJson.edges[0].node;

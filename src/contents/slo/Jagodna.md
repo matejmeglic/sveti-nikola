@@ -2,7 +2,7 @@
 lang: "slo"
 title: "Jagodna"
 date: "2020-06-20"
-length: ""
+length: "~5 km"
 time: "2h 30min"
 mapstrack: ""
 warning: ""
@@ -50,7 +50,6 @@ Opozorilo - zadnjih 100m vzpona pred priključkom na pot iz Svete Nedelje nismo 
 ![8](../images/nedelja-crossroads-jagodna-crossroads-dolac/8.jpg)
 ![9](../images/nedelja-crossroads-jagodna-crossroads-dolac/9.jpg)
 ![10](../images/nedelja-crossroads-jagodna-crossroads-dolac/10.jpg)
-![11](../images/nedelja-crossroads-jagodna-crossroads-dolac/11.jpg)
 ![12](../images/nedelja-crossroads-jagodna-crossroads-dolac/12.jpg)
 ![13](../images/nedelja-crossroads-jagodna-crossroads-dolac/13.jpg)
 ![14](../images/nedelja-crossroads-jagodna-crossroads-dolac/14.jpg)
