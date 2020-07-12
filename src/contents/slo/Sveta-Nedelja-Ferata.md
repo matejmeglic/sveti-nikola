@@ -12,11 +12,11 @@ carfriendly: "n"
 offroadfriendly: "n"
 ---
 
-**Opozorilo: **Avtorji ne plezamo ferat, zato te poti nismo fizično preplezali in se pri opisu poslužujemo pregleda map, opazovanja dejanskega stanja in raziskave na spletu. Če boste ferato dokumentirali podrobneje, se nam javite.
+Opozorilo: Avtorji ne plezamo ferat, zato te poti nismo fizično preplezali in se pri opisu poslužujemo pregleda map, opazovanja dejanskega stanja in raziskave na spletu. Če boste ferato dokumentirali podrobneje, se nam javite.
 
-Parkiramo pri bivši avtobusni postaji (prvi znak za špiljo - jamo) in se skozi vas povzpnemo do drugega znaka (viden iz parkirišča nad vsemi hišami). Pri križišču izberemo levo, ki se cik-cak (vsak ovinek je označen) vzpenja in v 30 minutah dosežemo prvo, Široko jamo (jama se nahaja 50m nad potjo). Vstopa v obe ferati se začnete približno 150m po tem, ko se vrnemo na pot (neoznačeno, pogled nazaj).
+Parkiramo pri bivši avtobusni postaji (prvi znak za špiljo - jamo) in se skozi vas povzpnemo do drugega znaka (viden iz parkirišča nad vsemi hišami). Pri križišču izberemo levo, ki se cik-cak vzpenja (vsak ovinek je označen) in v 30 minutah dosežemo prvo, Široko jamo (jama se nahaja 50 m nad potjo). Vstop v obe ferati se začnete približno 150 m po tem, ko se vrnemo na pot (neoznačeno, pogled nazaj).
 
-Glede na pregledane vire je prva ferata dolga 250m (2-3h) in je klasificirana kot B/C z visečim mostom kategorije C (op.a. vir Bojan Ambrožič). Druga, lažja ferata, je težavnostne stopnje A/B in je povezana s prvo ferato. Predlagan samoprispevek k vzdrževanju ferate je 50HRK (7EUR). Svetujemo vam, da se zanašate na druge, bolj preverjene vire.
+Glede na pregledane vire je prva ferata dolga 250 m (2-3 h) in je klasificirana kot B/C z visečim mostom kategorije C (op.a. vir Bojan Ambrožič). Druga, lažja ferata, je težavnostne stopnje A/B in je povezana s prvo ferato. Predlagan samoprispevek k vzdrževanju ferate je 50 HRK (7 EUR). Svetujemo vam, da se zanašate na druge, bolj preverjene vire.
 
 ![1](../images/nedelja-village/1.jpg)
 ![2](../images/nedelja-village/2.jpg)
