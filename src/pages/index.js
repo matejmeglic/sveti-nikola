@@ -7,7 +7,6 @@ import Maps from "../components/Maps"
 import RouteColor from "../components/RouteColor"
 import SEO from "../components/seo"
 
-
 export default function Home({data}) {
   const jsonData = data.allPublicJson.edges[0].node;
   const language = data.allMarkdownRemark.edges[0].node.frontmatter.lang; // post language 
@@ -45,16 +44,20 @@ export default function Home({data}) {
   
  RenderTranslations();
 
+
+
+  
+
+
   return (
     <div>
       <Layout />
       <SEO />
       <Maps geoJsonData={jsonData} />
       <div className="wrapper">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          
-          <div key={node.id} className="content">
-          <RouteColor title={node.frontmatter.title} jsonData={jsonData} cssClass="boxColorMain"></RouteColor>
+        {data.allMarkdownRemark.edges.map(({ node }) => ( 
+          <div key={node.id}  className="content">
+          <RouteColor title={node.frontmatter.title} jsonData={jsonData}  cssClass="boxColorMain"></RouteColor>
           <span className="boxInfo">
             <Link to={node.fields.slug} css={css`text-decoration: none; color: inherit;`}>
               <h3 css={css`margin-bottom: ${rhythm(1 / 4)};`}>{node.frontmatter.title}{" "}</h3>
@@ -78,7 +81,7 @@ export default function Home({data}) {
           </div>
         <hr style={{marginBottom: rhythm(2)}} />
         <h4>{translationResults[6]}</h4>
-          <div className="warnings">    
+          <div className="warnings">  
             <ul>
               <li>{translationResults[7]}</li>
               <li>{translationResults[8]} <a href="https://github.com/matejmeglic/sveti-nikola" target="_blank" rel="noopener noreferrer">GH Repo</a></li>
@@ -93,70 +96,70 @@ export default function Home({data}) {
 }
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___title]}, filter: {frontmatter: {lang: {eq: "slo"}}, fields: {slug: {regex: "/^.slo/"} }}) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            lang
-            title
-            date
-            length
-            time
-            warning
-            marked
-          }
-          excerpt(pruneLength: 500)
-          fields {
-            slug
-          }
+query {
+  allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___title]}, filter: {frontmatter: {lang: {eq: "hr"}}, fields: {slug: {regex: "/^.hr/"} }}) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          lang
+          title
+          date
+          length
+          time
+          warning
+          marked
         }
-      }
-    },
-    
-    allPublicJson {
-      edges {
-        node {
-          hidden_routes {
-            color
-            parts
-            route
-          }
-          icons {
-            coordinates
-            name
-            translation {
-              en
-              hr
-              slo
-            }
-          }
-          languages {
-            item
-            translation {
-              en
-              hr
-              slo
-            }
-          }
-          routeParts {
-            route
-            coordinates
-          }
-          routes {
-            alternative
-            color
-            hiddenRoute
-            page
-            parts
-            route
-          }
+        excerpt(pruneLength: 500)
+        fields {
+          slug
         }
       }
     }
-
-  }
+  },
   
+  allPublicJson {
+    edges {
+      node {
+        hidden_routes {
+          color
+          parts
+          route
+        }
+        icons {
+          coordinates
+          name
+          translation {
+            en
+            hr
+            slo
+          }
+        }
+        languages {
+          item
+          translation {
+            en
+            hr
+            slo
+          }
+        }
+        routeParts {
+          route
+          coordinates
+        }
+        routes {
+          alternative
+          color
+          hiddenRoute
+          page
+          parts
+          route
+        }
+      }
+    }
+  }
+
+}
+
 `

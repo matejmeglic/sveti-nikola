@@ -98,69 +98,70 @@ export default function Home({data}) {
 }
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {lang: {eq: "en"}}}) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            lang
-            title
-            date
-            length
-            time
-            warning
-            marked
-          }
-          excerpt(pruneLength: 500)
-          fields {
-            slug
-          }
+query {
+  allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___title]}, filter: {frontmatter: {lang: {eq: "en"}}, fields: {slug: {regex: "/^.en/"} }}) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          lang
+          title
+          date
+          length
+          time
+          warning
+          marked
+        }
+        excerpt(pruneLength: 500)
+        fields {
+          slug
         }
       }
-    },
-    
-    allPublicJson {
-      edges {
-        node {
-          hidden_routes {
-            color
-            parts
-            route
+    }
+  },
+  
+  allPublicJson {
+    edges {
+      node {
+        hidden_routes {
+          color
+          parts
+          route
+        }
+        icons {
+          coordinates
+          name
+          translation {
+            en
+            hr
+            slo
           }
-          icons {
-            coordinates
-            name
-            translation {
-              en
-              hr
-              slo
-            }
+        }
+        languages {
+          item
+          translation {
+            en
+            hr
+            slo
           }
-          languages {
-            item
-            translation {
-              en
-              hr
-              slo
-            }
-          }
-          routeParts {
-            route
-            coordinates
-          }
-          routes {
-            alternative
-            color
-            hiddenRoute
-            page
-            parts
-            route
-          }
+        }
+        routeParts {
+          route
+          coordinates
+        }
+        routes {
+          alternative
+          color
+          hiddenRoute
+          page
+          parts
+          route
         }
       }
     }
   }
-  
+
+}
+
 `
