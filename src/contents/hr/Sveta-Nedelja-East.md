@@ -12,10 +12,9 @@ carfriendly: "n"
 offroadfriendly: "n"
 ---
 
-Na raskrižju držite se udesno (slijedite putokaze za Svetu Nedelju i Jagodnu). Put se strmo uspinje prema istoku i preskače nekoliko makadamskih pristupnih staza. Svi su zavoji dobro označeni i nakon 45 minuta hoda nesvjesno zakoračimo na stari kameni transportni sustav koji vodi odmah ispod vrha visoravni. Slijedite markacije i na jedinom raskrižju odaberite gornju, lijevu stazu (desno se stara, neoznačena staza odvaja od glavne staze prema Jagodni (čovuljak)). Nastavljamo uzbrdo i nakon 20 minuta stižemo do vrha visoravni, gdje zadnji put gledamo prema Jagodni. Na gotovo nevidljivom raskrižju držite se lijevo (zaboravljena i neodržavana staza do Ivana Dolca s desne strane). Pratimo stazu i uskoro u daljini imamo pogled na vrh Svetog Nikole. Na jedinom raskrižju, gdje nam se s desne strane spaja staza od Svirče, nastavljamo ravno naprijed i do vrha stižemo s istoka.
+Na raskrižju držite se desne strane puta (slijedite putokaze za Svetu Nedelju i Jagodnu). Put se strmo uspinje prema istoku i preskače nekoliko makadamskih pristupnih staza. Svi su zavoji dobro označeni i nakon 45 minuta hoda nesvjesno ćemo zakoračiti na mulatjeru, koja vodi tik ispod vrha visoravni. Slijedite markacije i na jedinom raskrižju odaberite gornju, lijevu stazu (desno se stara, neoznačena staza odvaja od glavne staze prema Jagodni (čovuljak)). Nastavljamo uzbrdo i nakon 20 minuta stižemo do vrha visoravni, gdje zadnji put gledamo prema Jagodni. Na gotovo nevidljivom raskrižju držite se lijevo (zaboravljena i neodržavana staza do Ivana Dolca je s desne strane). Pratimo stazu i uskoro se u daljini otvara pogled na vrh Svetog Nikole. Na jedinom raskrižju, gdje nam se s desne strane spaja staza od Svirče, nastavljamo ravno naprijed i do vrha stižemo sa istoka.
 
-Posebno treba paziti jer taj pristup nije bio dobro održavan kao zapadni pristup, naišli smo na 3 zmije. Budite pažljivi.
-
+Posebno treba paziti jer taj pristup nije bio dobro održavan kao zapadni pristup, naišli smo na 3 zmije. Budite oprezni.
 
 ![1](../images/nedelja-village/1.jpg)
 ![2](../images/nedelja-village/2.jpg)
